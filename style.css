@@ -1,0 +1,28 @@
+/*reset, all*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    scroll-behavior: smooth;
+}
+
+/*no scroll for reduced motion*/
+@media screen and (prefers-reduced-motion: reduce) {
+    *{
+        scroll-behavior: auto;
+    }
+}
+
+/*variable definitions*/
+:root{
+    /*colours*/
+    --headerBG: #164C45; 
+    --bodyBG: #D9D9D9; 
+
+    /*text styles*/
+
+    /*spacings*/
+
+    /*font sizings*/
+}
