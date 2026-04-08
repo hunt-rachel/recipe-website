@@ -13,16 +13,9 @@
         <script src="js files/buttonFunctions.js"></script>
         
         <!--navigation bar-->
-        <div class="navBar row centerVertical">
-            <hamburger-icon></hamburger-icon>
-            <h1>home</h1>
-            <div class="searchbarContainer centerVertical">
-                <form action="/recipes-list.html">
-                    <input type="text" placeholder="search here...">
-                    <button type="submit">go!</button>
-                </form>
-            </div>
-        </div>
+        <nav-bar
+            navText="home"
+        ></nav-bar>
 
         <!--home contents-->
         <div class="homeWelcome centerTxt">
@@ -35,6 +28,12 @@
                 url="recipes-list.html";
                 linkText="all recipes"
             ></home-link>
+
+            <home-link 
+                url="favourites.html";
+                linkText="favourites"
+            ></home-link>
+
             <home-link 
                 url="recipe-instructions.html";
                 linkText="surprise me!"
