@@ -18,21 +18,28 @@
 :root{
     /*colours*/
     --headerBG: #164C45; 
-    --bodyBG: #D9D9D9; 
-
-    /*text styles*/
+    --bodyBG: #D9D9D9;   
 
     /*spacings*/
 
     /*font sizings*/
+    --navBarText: 2.5rem;
+    --homeH1: 5vw;
+    --homeH2: 2vw;
+    --homeP: 2vw;
+
+    /*font weight*/
+    --lightHeader: 50;
 }
 
 /*text*/
-h1{
+.navBar h1{
     color: white;
+
+    font-size: var(--navBarText);
 }
 
-/*flex directions and alignments*/
+/*flex directions and text alignments*/
 .row{
     display: flex;
     flex-direction: row;
@@ -44,6 +51,14 @@ h1{
     align-items: center;
 }
 
+.centerHorizontal{
+    margin: auto;
+}
+
+.centerTxt{
+    text-align: center;
+}
+
 body {
     background-color: var(--bodyBG);
 }
@@ -52,7 +67,7 @@ body {
 .navBar {
     width: 100vw;
     
-    padding: 0 20px;
+    padding: 5px 20px;
 
     background-color: var(--headerBG);
 }
@@ -112,4 +127,34 @@ body {
 
 .navBar .searchbarContainer button {
     cursor: pointer;
+}
+
+/*home classes*/
+.homeWelcome h1{
+    margin-top: 10vh;
+    margin-bottom: 2.5vh;
+
+    font-size: var(--homeH1);
+}
+
+.homeWelcome h2{
+    font-size: var(--homeH2); 
+    font-weight: var(--lightHeader);
+
+    margin-bottom: 20vh;
+}
+
+.homeLinks{
+    justify-content: space-around;
+
+    font-size: var(--homeP);
+}
+
+.homeLinks a, a:visited{
+    color: black;
+    text-decoration: none;
+}
+
+.homeLinks a:hover{
+    text-decoration: underline;
 }
