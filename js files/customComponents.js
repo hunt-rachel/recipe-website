@@ -1,26 +1,13 @@
 /*file for creating custom, modular components*/
 
-/*icon for navigation bar*/
-class HamburgerIcon extends HTMLElement {
-    connectedCallback(){
-        this.innerHTML = `
-            <div class="hamburgerContainer" onclick="activateNavDropdown(this)">
-                <div class="topHamBar"></div>
-                <div class="midHamBar"></div>
-                <div class="bottomHamBar"></div>
-            </div>`;
-    }
-}
-customElements.define("hamburger-icon", HamburgerIcon);
-
 /*navigation bar*/
 class NavigationBar extends HTMLElement {
     connectedCallback(){
         const navText = this.getAttribute("navText");
 
         this.innerHTML = `
-            <div class="navBar row centerVertical">
-               <hamburger-icon></hamburger-icon>
+            <div class="navBar row centerVertical" id="nav">
+               <span class=navIcon onclick="openOverlay()">&#9776</span>
                <h1>${navText}</h1>
                <div class="searchbarContainer centerVertical">
                     <form action="/recipes-list.html">
@@ -32,6 +19,21 @@ class NavigationBar extends HTMLElement {
     }
 }
 customElements.define("nav-bar", NavigationBar);
+
+/*navigation overlay*/
+class NavigationOverlay extends HTMLElement {
+    connectedCallback(){
+        this.innerHTML=`<div id="overlayNav" class="overlay">
+            <a href="javascript:void(0)" class="closeOverlayBtn" onclick="closeOverlay()">&times</a>
+            <div class="overlayLinks">
+                <a href="index.html">home</a>
+                <a href="recipes-list.html">all recipes</a>
+                <a href="favourites.html">favourites</a>
+            </div>
+        </div>`;
+    }
+}
+customElements.define("nav-overlay", NavigationOverlay);
 
 /*links on home to different pages in site*/
 class HomeLink extends HTMLElement{

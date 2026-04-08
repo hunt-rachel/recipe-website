@@ -19,6 +19,10 @@
     /*colours*/
     --headerBG: #164C45; 
     --bodyBG: #D9D9D9;   
+    --overlayBG: #000000e0;
+
+    --overlayTxt: #818181;
+    --overlayHoverTxt: #f1f1f1;
 
     /*spacings*/
 
@@ -27,6 +31,8 @@
     --homeH1: 5vw;
     --homeH2: 2vw;
     --homeP: 2vw;
+
+    --overlayA: 3vw;
 
     /*font weight*/
     --lightHeader: 50;
@@ -72,42 +78,63 @@ body {
     font-size: var(--navBarText);
 }
 
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: var(--overlayBG);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
 
-/*hamburger nav bar icon classes*/
-.hamburgerContainer {
+.overlayLinks {
+    position: relative;
+    top: 25%;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.overlayLinks a, .overlayLinks a:visited {
+    padding: 8px;
+    text-decoration: none;
+    font-size: max(var(--overlayA), 20px);
+    color: var(--overlayTxt);
+    display: block;
+    transition: 0.2s
+}
+
+.overlayLinks a:hover, .overlayLinks a:focus {
+    color: var(--overlayHoverTxt);
+    text-decoration: underline;
+}
+
+.closeOverlayBtn {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-size: 60px;
+    color: var(--overlayTxt);
+
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+.closeOverlayBtn:hover {
+    color: var(--overlayHoverTxt);
+}
+
+/*nav bar icon classes*/
+.navIcon {
     display: inline-block;
     cursor: pointer;
 
     margin-right: 20px;
-}
 
-.topHamBar, .midHamBar, .bottomHamBar {
-    width: 35px;
-    height: 5px;
-
-    border-radius: 50px;
-
-    background-color: white;
-
-    margin: 6px 0;
-
-    transition: 0.4s;
-}
-
-/*hamburger icon animation classes*/
-/*rotate top bar*/
-.change .topHamBar {
-    transform: translate(0, 11px) rotate(-45deg);
-}
-
-/*fade middle bar*/
-.change .midHamBar {
-    opacity: 0;
-}
-
-/*rotate bottom bar*/
-.change .bottomHamBar {
-    transform: translate(0, -11px) rotate(45deg);
+    color: white;
+    font-size: 30px;
 }
 
 /*search bar classes*/
@@ -132,15 +159,19 @@ body {
 }
 
 /*home classes*/
+.homeWelcome{
+    user-select: none;
+}
+
 .homeWelcome h1{
     margin-top: 10vh;
     margin-bottom: 2.5vh;
 
-    font-size: var(--homeH1);
+    font-size: max(var(--homeH1), 48px);
 }
 
 .homeWelcome h2{
-    font-size: var(--homeH2); 
+    font-size: max(var(--homeH2), 24px); 
     font-weight: var(--lightHeader);
 
     margin-bottom: 20vh;
@@ -149,12 +180,13 @@ body {
 .homeLinks{
     justify-content: space-around;
 
-    font-size: var(--homeP);
+    font-size: max(var(--homeP), 20px);
 }
 
 .homeLinks a, a:visited{
     color: black;
     text-decoration: none;
+    transition: 0.2s
 }
 
 .homeLinks a:hover{
