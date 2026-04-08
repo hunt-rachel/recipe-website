@@ -26,3 +26,90 @@
 
     /*font sizings*/
 }
+
+/*text*/
+h1{
+    color: white;
+}
+
+/*flex directions and alignments*/
+.row{
+    display: flex;
+    flex-direction: row;
+}
+
+.centerVertical {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: var(--bodyBG);
+}
+
+/*navigation bar classes*/
+.navBar {
+    width: 100vw;
+    
+    padding: 0 20px;
+
+    background-color: var(--headerBG);
+}
+
+/*hamburger nav bar icon classes*/
+.hamburgerContainer {
+    display: inline-block;
+    cursor: pointer;
+
+    margin-right: 20px;
+}
+
+.topHamBar, .midHamBar, .bottomHamBar {
+    width: 35px;
+    height: 5px;
+
+    border-radius: 50px;
+
+    background-color: white;
+
+    margin: 6px 0;
+
+    transition: 0.4s;
+}
+
+/*hamburger icon animation classes*/
+/*rotate top bar*/
+.change .topHamBar {
+    transform: translate(0, 11px) rotate(-45deg);
+}
+
+/*fade middle bar*/
+.change .midHamBar {
+    opacity: 0;
+}
+
+/*rotate bottom bar*/
+.change .bottomHamBar {
+    transform: translate(0, -11px) rotate(45deg);
+}
+
+/*search bar classes*/
+.navBar .searchbarContainer{
+    height: 70px;
+    
+    margin-left: auto;
+}
+
+.navBar input[type=text] {
+    width: 500px;
+    
+    padding: 10px;
+    margin-top: auto;
+
+    border-radius: 50px;
+}
+
+.navBar .searchbarContainer button {
+    cursor: pointer;
+}
