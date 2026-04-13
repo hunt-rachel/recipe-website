@@ -194,22 +194,36 @@ const recipesObj = {
     },
 
     ChickenBiryani: {
-        title: "",
-        time: "",
-        serves: "",     
+        title: "Chicken Biryani",
+        time: "30 mins",
+        serves: "2",     
         tags: [
             "one pot",
             "30 mins or less"
         ],
         link: "https://www.gousto.co.uk/cookbook/chicken-recipes/one-pot-easy-chicken-biryani",
         ingredients: [
-            "",
+            "Chicken Breasts: 2",
+            "Diced Onion",
+            "Green Beans",
+            "Carrot: 1 or 2",
+            "Curry Powder: 1 tbsp",
+            "Tomato Puree: 1 tbsp",
+            "White Rice: 140g",
+            "Chicken Stock: 350ml"
         ],
         instructions: [
-            "",
+            "Dice your <span>chicken breasts</span>, and prepare your <span>vegetables</span> to the size and amount of your liking!",
+            "Heat a large pan over a high heat with 1 - 2 tbsp of <span>oil</span>.",
+            "Once hot, add your <span>onion</span>, <span>other vegetables</span>, and <span>curry powder</span>. Cook for 2  - 3 minutes, or until softer than before.",
+            "Add your <span>chicken</span> to the pan and cook until no longer pink.",
+            "Add your <span>tomato puree</span>, and cook for a couple more minutes.",
+            "Add your <span>rice</span> and <span>chicken stock</span>, and bring to the boil.",
+            "Once boiling, reduce the heat, and cook covered for 10 - 15 minutes (until the rice has cooked through).",
+            "Garnish to your taste, and enjoy!"            
         ],
         notes: [
-            "",
+            "If the mixture looks too dry at any point during the covered cooking, add a splash more water!",
         ]
     }
 }
