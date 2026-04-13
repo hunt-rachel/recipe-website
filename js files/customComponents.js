@@ -48,3 +48,34 @@ class HomeLink extends HTMLElement{
     }
 }
 customElements.define("home-link", HomeLink);
+
+//recipe listing
+class RecipeListing extends HTMLElement{
+    connectedCallback(){
+        const id = this.getAttribute("id");
+
+        const recipeName = recipesObj[id].title;
+        var recipeTags = recipesObj[id].tags.slice();
+
+        var currTags = "";
+        
+        for(var i = 0; i < recipeTags.length; i++) {
+            currTags += "<span>";
+            currTags += recipeTags[i];
+            currTags += "</span>";
+        }
+
+        this.innerHTML = `
+        <div class="recipeListing centerVertical row">
+            <div class="star"></div>
+            <div class="listingText column">
+                <a href="recipe-instructions.html">${recipeName}</a>
+                <div class="tags row">
+                    <p>${currTags}</p>
+                </div>
+            </div>
+        </div>
+        `;
+    }
+}
+customElements.define("recipe-listing", RecipeListing);

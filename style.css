@@ -20,11 +20,16 @@
     --headerBG: #164C45; 
     --bodyBG: #D9D9D9;   
     --overlayBG: #000000e0;
+    --tagBG: #AADBD5;
 
     --overlayTxt: #818181;
     --overlayHoverTxt: #f1f1f1;
 
+    --starYellow: #EBBB05;
+
     /*spacings*/
+    --starSize: 2.5vw;
+    --tagGap: 5px;
 
     /*font sizings*/
     --navBarText: 2.5rem;
@@ -33,6 +38,9 @@
     --homeP: 2vw;
 
     --overlayA: 3vw;
+
+    --listingName: 2vw;
+    --listingTag: 1.25vw;
 
     /*font weight*/
     --lightHeader: 50;
@@ -44,9 +52,13 @@
     flex-direction: row;
 }
 
+.column{
+    display: flex;
+    flex-direction: column;
+}
+
 .centerVertical {
     display: flex;
-    justify-content: center;
     align-items: center;
 }
 
@@ -103,7 +115,7 @@ body {
     font-size: max(var(--overlayA), 20px);
     color: var(--overlayTxt);
     display: block;
-    transition: 0.2s
+    transition: 0.2s;
 }
 
 .overlayLinks a:hover, .overlayLinks a:focus {
@@ -191,4 +203,49 @@ body {
 
 .homeLinks a:hover{
     text-decoration: underline;
+}
+
+/*recipe listing classes*/
+.recipeListing {
+    background-color: yellow;
+    margin: 10px;
+}
+
+.listingText{
+    margin-left: 10px;
+    gap: 10px
+}
+
+.listingText a{
+    font-size: max(var(--listingName), 24px);
+}
+
+.star {
+    width: max(var(--starSize), 30px);
+    height: max(var(--starSize), 30px);
+    aspect-ratio: 1;
+    clip-path: polygon(50% 0,79% 90%,2% 35%,98% 35%,21% 90%); 
+    background-color: blueviolet;
+    outline: #4CAF50 solid 4px;
+}
+
+.tags{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--tagGap);
+}
+
+.tags span{
+    background-color: var(--tagBG);
+    color: var(--headerBG);
+    font-weight: bold;
+    font-family: sans-serif;
+
+    border-radius: 5px;
+
+    font-style: italic;
+    padding: 2px 5px 3px 4px;
+    margin-right: 10px;
+
+    font-size: max(var(--listingTag), 16px);
 }
