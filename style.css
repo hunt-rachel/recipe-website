@@ -33,7 +33,7 @@
     --tagGap: 5px;
 
     /*font sizings*/
-    --navBarText: 2.5rem;
+    --navBarText: 2rem;
     --homeH1: 5vw;
     --homeH2: 2vw;
     --homeP: 2vw;
@@ -43,8 +43,13 @@
     --listingName: 2vw;
     --listingTag: 1.25vw;
 
+    --ingredientP: 1.5vw;
+
     /*font weight*/
     --lightHeader: 50;
+
+
+    --dotSize: 16px;
 }
 
 /*flex directions and text alignments*/
@@ -78,17 +83,20 @@ body {
 /*navigation bar classes*/
 .navBar {
     width: 100vw;
+    height: 5vw;
     
     padding: 5px 20px;
 
     background-color: var(--headerBG);
+
+    position: sticky;
 }
 
 .navBar h1{
     color: white;
     text-decoration: underline 2px;
 
-    font-size: var(--navBarText);
+    font-size: max(var(--navBarText), 20px);
 }
 
 .overlay {
@@ -152,19 +160,21 @@ body {
 
 /*search bar classes*/
 .navBar .searchbarContainer{
-    height: 70px;
-    
     margin-left: auto;
 }
 
 .navBar input[type=text] {
     width: 30vw;
     min-width: 200px;
+
+    height: 6vh;
     
     padding: 10px;
     margin-top: auto;
 
     border-radius: 50px;
+
+    font-size: max(1vw, 16px);
 }
 
 .navBar .searchbarContainer button {
@@ -253,17 +263,52 @@ body {
 
 /*instruction page classes*/
 .ingredients {
-    width: 20vw;
+    width: 25vw;
     height: 100vh;
-
-    padding: 20px;
     
     background-color: var(--ingredientsBG);
+    color: white;
 }
 
 .ingredients h2 {
-    color: white;
     text-decoration: underline;
     font-weight: var(--lightHeader);
     font-size: max(1.75vw, 20px);
+
+    padding-top: 2vh;
+    padding-bottom: 10px;
+}
+
+.ingredients li {
+    font-size: max(var(--ingredientP), 16px);
+    margin-left: 3vw;
+
+    padding: 5px 0px;
+    padding-right: 3vw;
+}
+
+.mainInstBody {
+    width: 100%;
+    padding: 10px 20px;
+}
+
+.recipeTitle {
+    font-style: italic;
+    justify-content: space-between;
+    font-size: max(0.75vw, 10px);
+}
+
+.line {
+    height: 4px;
+    border-radius: 50px;
+    margin: calc((var(--dotSize) / 2) - 1px) 10px;
+    background-color: var(--headerBG);
+    flex: 1;
+}
+
+.dot {
+    height: var(--dotSize);
+    width: var(--dotSize);
+    border-radius: 50px;
+    background-color: var(--headerBG);
 }

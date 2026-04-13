@@ -40,7 +40,7 @@ function displayRecipeInstructions(rID) {
             ingredientsList.appendChild(ingredient);
         }
 
-        rTitle.innerHTML = `<h1>${recipe.title}</h1>`;
+        rTitle.innerHTML = `<h1>${recipe.title.toUpperCase()}</h1>`;
     }
 }
 
@@ -93,7 +93,7 @@ const recipesObj = {
             "Diced Carrot",
             "Mince Beef: 250g",
             "Katsu Sauce Blocks: 4",
-            "Noodles of your choice: 2 portions",
+            "Preferred Noodles: 2 portions",
             "Vegetable Broth: 400ml"
         ],
         instructions: [
