@@ -21,6 +21,7 @@
     --bodyBG: #D9D9D9;   
     --overlayBG: #000000e0;
     --tagBG: #AADBD5;
+    --ingredientsBG: #386B64;
 
     --overlayTxt: #818181;
     --overlayHoverTxt: #f1f1f1;
@@ -248,4 +249,21 @@ body {
     margin-right: 10px;
 
     font-size: max(var(--listingTag), 16px);
+}
+
+/*instruction page classes*/
+.ingredients {
+    width: 20vw;
+    height: 100vh;
+
+    padding: 20px;
+    
+    background-color: var(--ingredientsBG);
+}
+
+.ingredients h2 {
+    color: white;
+    text-decoration: underline;
+    font-weight: var(--lightHeader);
+    font-size: max(1.75vw, 20px);
 }

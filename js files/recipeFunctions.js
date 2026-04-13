@@ -20,6 +20,30 @@
     }
  */
 
+//function for displaying recipe page with respective details
+function displayRecipeInstructions(rID) {
+    //get all page elements
+    const currNavTitle=document.getElementById("navTitleText");
+    var ingredientsList=document.getElementById("ingredientsList");
+    const rTitle=document.getElementById("rTitle");
+
+    if(recipesObj.hasOwnProperty(rID)) {
+        var recipe = recipesObj[rID];
+        
+        //populate html elements here
+        currNavTitle.innerHTML = `<h1 id="navTitleText">${recipe.title}</h1>`;
+
+        //populate ingredients list
+        for(let i = 0; i < recipe.ingredients.length; i++){
+            let ingredient = document.createElement("LI");
+            ingredient.appendChild(document.createTextNode(recipe.ingredients[i]));
+            ingredientsList.appendChild(ingredient);
+        }
+
+        rTitle.innerHTML = `<h1>${recipe.title}</h1>`;
+    }
+}
+
 const recipesObj = {
     LentilDahl: {
         title: "Lentil Dahl",
@@ -61,7 +85,7 @@ const recipesObj = {
         time: "20 minutes",
         serves: "2",     
         tags: [
-            "Under 30 mins",
+            "30 mins or less",
         ],
         link: "",
         ingredients: [
@@ -81,6 +105,40 @@ const recipesObj = {
         ],
         notes: [
             "I recommend cooking your noodles in broth instead of water, makes them much more flavourful! Powdered boullion is good to sprinkle into the boiling water.",
+        ]
+    },
+
+    ChickenOrzo: {
+        title: "Marry Me Chicken Orzo",
+        time: "30 mins",
+        serves: "2",     
+        tags: [
+            "one pot",
+            "30 mins or less"
+        ],
+        link: "https://www.tamingtwins.com/marry-me-chicken-orzo/",
+        ingredients: [
+            "Chicken Breast: x2",
+            "Garlic Puree: 1.5 tsp",
+            "Tomato Puree: 1 tbsp",
+            "Oregano: 1/2 tsp",
+            "Paprika: 1 tsp",
+            "Orzo: 125g",
+            "Chicken Stock: 325ml",
+            "Double Cream: 75ml",
+            "Parmesan: 25g",
+            "Spinach: 1 good handful"
+        ],
+        instructions: [
+            "Dice your chicken breasts, and fry in a splash of oil on high heat until no longer pink.",
+            "Reduce the heat and add your seasonings. Stir until fragrant.",
+            "Add your orzo, chicken stock, and some salt and pepper. Give it all a good mix!",
+            "Cook covered for 10 minutes, or until the orzo and chicken are cooked through.",
+            "Turn the heat even lower (or off completely), and add your spinach, cream, and parmesan. Cook until the cream has heated and the spinach wilted.",
+            "Serve up!"
+        ],
+        notes: [
+            "",
         ]
     }
 }

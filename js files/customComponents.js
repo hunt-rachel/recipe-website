@@ -8,7 +8,7 @@ class NavigationBar extends HTMLElement {
         this.innerHTML = `
             <div class="navBar row centerVertical" id="nav">
                <span class=navIcon onclick="openOverlay()">&#9776</span>
-               <h1>${navText}</h1>
+               <h1 id="navTitleText">${navText}</h1>
                <div class="searchbarContainer centerVertical">
                     <form action="/recipes-list.html">
                         <input type="text" placeholder="search here...">
@@ -69,7 +69,7 @@ class RecipeListing extends HTMLElement{
         <div class="recipeListing centerVertical row">
             <div class="star"></div>
             <div class="listingText column">
-                <a href="recipe-instructions.html">${recipeName}</a>
+                <a href="recipe-instructions.html?id=${id}">${recipeName}</a>
                 <div class="tags row">
                     <p>${currTags}</p>
                 </div>

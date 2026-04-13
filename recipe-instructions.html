@@ -11,6 +11,7 @@
         <!--scripts definitions-->
         <script src="js files/customComponents.js"></script>
         <script src="js files/buttonFunctions.js"></script>
+        <script src="js files/recipeFunctions.js"></script>
         
         <!--navigation bar-->
         <nav-bar
@@ -19,5 +20,25 @@
 
         <nav-overlay></nav-overlay>
 
+        <div class="instructionsBody center row">
+            <!--ingredients-->
+            <div class="ingredients">
+                <h2 class="centerTxt">ingredients:</h2>
+                <ul id="ingredientsList">
+                </ul>
+            </div>
+
+            <!--title info and text-->
+            <div class="mainInstBody">
+                <h1 id="rTitle">RECIPE NAME</h1>
+            </div>
+        </div>
+
     </body>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search)
+    const currID = urlParams.get('id');
+    window.onload = displayRecipeInstructions(currID);
+</script>
 </html>
