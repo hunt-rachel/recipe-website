@@ -162,5 +162,54 @@ const recipesObj = {
         notes: [
             "",
         ]
+    },
+
+    SausagePasta: {
+        title: "Sausage and Pepper Pasta Bake",
+        time: "30 mins",
+        serves: "2",     
+        tags: [
+            "30 mins or less",
+        ],
+        link: "",
+        ingredients: [
+            "Sausages: 6 to 8",
+            "Pasta: 150g",
+            "Bell Pepper: 1",
+            "Pasta Sauce: 1 jar (or equivalent)",
+            "Cheese for topping"
+        ],
+        instructions: [
+            "Pre-heat your oven to 200 degrees celsius.",
+            "Over a high heat, fry the <span>sausages</span> until browned.",
+            "Meanwhile, dice your <span>bell pepper</span>, and boil your <span>pasta</span> for just under the instructed time.",
+            "Take out your <span>sausages</span> to cut into bitesize pieces, and add back to the pan with your <span>pepper</span> and <span>tomato sauce</span>.",
+            "When your <span>pasta</span> is ready, stir it into your sauce. Move the mixture into an oven safe dish, and top with your <span>cheese</span>.",
+            "Bake for 10-15 minutes, or until the top is golden and bubbly.",
+            "Serve up!"
+        ],
+        notes: [
+            "",
+        ]
+    },
+
+    ChickenBiryani: {
+        title: "",
+        time: "",
+        serves: "",     
+        tags: [
+            "one pot",
+            "30 mins or less"
+        ],
+        link: "https://www.gousto.co.uk/cookbook/chicken-recipes/one-pot-easy-chicken-biryani",
+        ingredients: [
+            "",
+        ],
+        instructions: [
+            "",
+        ],
+        notes: [
+            "",
+        ]
     }
 }
