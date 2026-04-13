@@ -26,6 +26,9 @@ function displayRecipeInstructions(rID) {
     const currNavTitle=document.getElementById("navTitleText");
     var ingredientsList=document.getElementById("ingredientsList");
     const rTitle=document.getElementById("rTitle");
+    const rTags=document.getElementById("recipeTags");
+    const rTiming=document.getElementById("recipeTiming");
+    var instructionsList=document.getElementById("instructionsList");
 
     if(recipesObj.hasOwnProperty(rID)) {
         var recipe = recipesObj[rID];
@@ -35,12 +38,31 @@ function displayRecipeInstructions(rID) {
 
         //populate ingredients list
         for(let i = 0; i < recipe.ingredients.length; i++){
-            let ingredient = document.createElement("LI");
+            let ingredient = document.createElement("li");
             ingredient.appendChild(document.createTextNode(recipe.ingredients[i]));
             ingredientsList.appendChild(ingredient);
         }
 
+        //recipe header section
         rTitle.innerHTML = `<h1>${recipe.title.toUpperCase()}</h1>`;
+
+        for(let j = 0; j < recipe.tags.length; j++){
+            let tag = document.createElement("p");
+            tag.innerHTML=`<span>${recipe.tags[j]}</span>`;
+            rTags.appendChild(tag);
+        }
+
+        rTiming.innerHTML=`<p><span><i>time</i>: ${recipe.time}</p></span>`;
+
+        //populate instructions list
+        for(let k = 0; k < recipe.instructions.length; k++){
+            let instruction = document.createElement("li");
+            let instTxt = document.createElement("p");
+            instTxt.innerHTML = `${recipe.instructions[k]}`;
+            instruction.appendChild(instTxt);
+            instructionsList.appendChild(instruction);
+        }
+
     }
 }
 
@@ -68,11 +90,11 @@ const recipesObj = {
             "Spinach: 2 - 3 handfuls"
         ],
         instructions: [
-            "In a large pot over a medium-high heat, fry your desired amount of diced onions with a pinch of sugar until golden.",
-            "Add your lentils and seasonings, and fry for another minute.",
-            "Once fragrant, add your chopped tomatoes, coconut milk, and vegetable broth.",
+            "In a large pot over a medium-high heat, fry your desired amount of <span>diced onions</span> with a pinch of <span>sugar</span> until golden.",
+            "Add your <span>lentils</span> and <span>seasonings</span>, and fry for another minute.",
+            "Once fragrant, add your <span>chopped tomatoes</span>, <span>coconut milk</span>, and <span>vegetable broth</span>.",
             "Give it a good stir, lower the heat, and leave to simmer for 30-45 minutes, until the lentils are soft and cooked through.",
-            "A couple of minutes before serving, add your spinach and stir in to wilt.",
+            "A couple of minutes before serving, add your <span>spinach</span> and stir in to wilt.",
             "Serve up! This can be enjoyed with rice, a bread of your choosing, or by itself!"
         ],
         notes: [
@@ -97,10 +119,10 @@ const recipesObj = {
             "Vegetable Broth: 400ml"
         ],
         instructions: [
-            "In a large pot over a medium-high heat, fry your desired amount of diced onions and carrot with a pinch of sugar until golden.",
-            "Add your mince, and continue to cook until browned.",
-            "Add your stock and bring to the boil. Once bubbling, dissolve your curry blocks into the mix",
-            "Lower the heat, and simmer for the amount of time it takes your noodles to boil.",
+            "In a large pot over a medium-high heat, fry your desired amount of <span>diced onions</span> and <span>carrot</span> with a pinch of <span>sugar</span> until golden.",
+            "Add your <span>mince</span>, and continue to cook until browned.",
+            "Add your <span>stock</span> and bring to the boil. Once bubbling, dissolve your <span>curry blocks</span> into the mix",
+            "Lower the heat, and simmer for the amount of time it takes your <span>noodles</span> to boil.",
             "Serve up!"
         ],
         notes: [
@@ -130,11 +152,11 @@ const recipesObj = {
             "Spinach: 1 good handful"
         ],
         instructions: [
-            "Dice your chicken breasts, and fry in a splash of oil on high heat until no longer pink.",
-            "Reduce the heat and add your seasonings. Stir until fragrant.",
-            "Add your orzo, chicken stock, and some salt and pepper. Give it all a good mix!",
+            "Dice your <span>chicken breasts</span>, and fry in a splash of <span>oil</span> on high heat until no longer pink.",
+            "Reduce the heat and add your <span>seasonings</span>. Stir until fragrant.",
+            "Add your <span>orzo</span>, <span>chicken stock</span>, and some <span>salt and pepper</span>. Give it all a good mix!",
             "Cook covered for 10 minutes, or until the orzo and chicken are cooked through.",
-            "Turn the heat even lower (or off completely), and add your spinach, cream, and parmesan. Cook until the cream has heated and the spinach wilted.",
+            "Turn the heat even lower (or off completely), and add your <span>spinach</span>, <span>cream</span>, and <span>parmesan</span>. Cook until the cream has heated and the spinach wilted.",
             "Serve up!"
         ],
         notes: [

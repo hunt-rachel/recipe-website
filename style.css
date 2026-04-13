@@ -25,12 +25,14 @@
 
     --overlayTxt: #818181;
     --overlayHoverTxt: #f1f1f1;
+    --ingredientTxt: #852929;
 
     --starYellow: #EBBB05;
 
     /*spacings*/
     --starSize: 2.5vw;
     --tagGap: 5px;
+    --tagPadding: 3px 10px 4px;;
 
     /*font sizings*/
     --navBarText: 2rem;
@@ -41,7 +43,7 @@
     --overlayA: 3vw;
 
     --listingName: 2vw;
-    --listingTag: 1.25vw;
+    --listingTag: 1.5vw;
 
     --ingredientP: 1.5vw;
 
@@ -167,7 +169,7 @@ body {
     width: 30vw;
     min-width: 200px;
 
-    height: 6vh;
+    height: 3vw;
     
     padding: 10px;
     margin-top: auto;
@@ -252,13 +254,13 @@ body {
     font-weight: bold;
     font-family: sans-serif;
 
-    border-radius: 5px;
+    border-radius: 15px;
 
     font-style: italic;
-    padding: 2px 5px 3px 4px;
+    padding: var(--tagPadding);
     margin-right: 10px;
 
-    font-size: max(var(--listingTag), 16px);
+    font-size: max(1.25vw, 18px);
 }
 
 /*instruction page classes*/
@@ -296,6 +298,8 @@ body {
     font-style: italic;
     justify-content: space-between;
     font-size: max(0.75vw, 10px);
+
+    padding-bottom: 10px;
 }
 
 .line {
@@ -311,4 +315,43 @@ body {
     width: var(--dotSize);
     border-radius: 50px;
     background-color: var(--headerBG);
+}
+
+#recipeTiming {
+    margin-top: 20px;
+}
+
+#recipeTiming span{
+    background-color: var(--starYellow);
+
+    border-radius: 15px;
+    padding: 3px 10px 4px;
+
+    font-size: max(var(--listingTag), 18px);
+}
+
+.instructionsText {
+    margin-top: 20px;
+}
+
+.instructionsText h2 {
+    font-style: italic;
+    text-decoration: underline;
+
+    font-size: max(2.5vw, 24px);
+}
+
+.instructionsText ol {
+    padding: 10px 20px;
+}
+
+.instructionsText li {
+    font-size: max(1.7vw, 24px);
+    margin-left: 1vw;
+
+    padding: 10px 0px;
+}
+
+.instructionsText li span {
+    color: var(--ingredientTxt);
 }

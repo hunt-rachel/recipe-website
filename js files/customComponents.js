@@ -79,3 +79,8 @@ class RecipeListing extends HTMLElement{
     }
 }
 customElements.define("recipe-listing", RecipeListing);
+
+class RecipeTitle extends HTMLElement {
+
+}
+customElements.define("recipe-title", RecipeTitle);
