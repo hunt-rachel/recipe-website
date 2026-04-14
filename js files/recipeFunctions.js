@@ -1,25 +1,3 @@
-//modal information base for each recipe page based on id
-/*
- * id: {
-        title: "",
-        time: "",
-        serves: "",     
-        tags: [
-            "",
-        ],
-        link: "",
-        ingredients: [
-            "",
-        ],
-        instructions: [
-            "",
-        ],
-        notes: [
-            "",
-        ]
-    }
- */
-
 //function for displaying recipe page with respective details
 function displayRecipeInstructions(rID) {
     //get all page elements
@@ -28,6 +6,8 @@ function displayRecipeInstructions(rID) {
     const rTitle=document.getElementById("rTitle");
     const rTags=document.getElementById("recipeTags");
     const rTiming=document.getElementById("recipeTiming");
+    const rServing=document.getElementById("recipeServing");
+    const rInspo=document.getElementById("recipeInspo");
     var instructionsList=document.getElementById("instructionsList");
 
     if(recipesObj.hasOwnProperty(rID)) {
@@ -53,6 +33,15 @@ function displayRecipeInstructions(rID) {
         }
 
         rTiming.innerHTML=`<p><span><i>time</i>: ${recipe.time}</p></span>`;
+        rServing.innerHTML=`<p><span><i>servings</i>: ${recipe.serves}</span></p>`;
+
+        if(recipe.link != "") {
+            rInspo.innerHTML = `<p><span><i>inspiration</i>: <a href="${recipe.link}" target="_blank">click here</a></span></p>`;
+        }
+
+        else {
+            rInspo.innerHTML = ``;
+        }
 
         //populate instructions list
         for(let k = 0; k < recipe.instructions.length; k++){
@@ -65,6 +54,28 @@ function displayRecipeInstructions(rID) {
 
     }
 }
+
+//modal information base for each recipe page based on id
+/*
+ * id: {
+        title: "",
+        time: "",
+        serves: "",     
+        tags: [
+            "",
+        ],
+        link: "",
+        ingredients: [
+            "",
+        ],
+        instructions: [
+            "<span></span>",
+        ],
+        notes: [
+            "",
+        ]
+    }
+ */
 
 const recipesObj = {
     LentilDahl: {
@@ -224,6 +235,104 @@ const recipesObj = {
         ],
         notes: [
             "If the mixture looks too dry at any point during the covered cooking, add a splash more water!",
+        ]
+    },
+
+    CubanBeef: {
+        title: "Cuban Style Beef",
+        time: "4 - 8 hours",
+        serves: "4",     
+        tags: [
+            "slow cooker",
+        ],
+        link: "https://pinchofnom.com/recipes/cuban-beef-ropa-vieja/",
+        ingredients: [
+            "Diced Beef: 500g",
+            "Diced Onion",
+            "Beef Stock: 250ml",
+            "Chopped Tomatoes: 1 tin",
+            "Bell Peppers: 1 to 2",
+            "Garlic Puree: 2 tsp",
+            "Tomato Puree: 2 tbsp",
+            "Cumin: 1 tsp",
+            "Oregano: 1 tsp",
+            "Turmeric: 1/2 tsp",
+            "Bay Leaves: 2",
+            "Corriander: 1 tsp",
+            "Red/White Wine Stock Pot: 1",
+            "Red/White Wine Vinegar: 1 tsp"
+        ],
+        instructions: [
+            "Cut your <span>bell pepper(s)</span> into strips.",
+            "Over a high heat, brown your <span>beef</span> and <span>onions</span>.",
+            "Add <span>all ingredients</span> to the slow cooker, stir, and cook for 8 hours on low, or 4 hours on high.",
+            "<span>Salt</span> and <span>pepper</span> to taste before serving, and enjoy! Don't forget to take out the bay leaves!"
+        ],
+        notes: [
+            "Can be enjoyed with rice, or as a stew with your favourite sides!",
+        ]
+    },
+
+    ChickenNoodleSoup: {
+        title: "Chicken Noodle Soup",
+        time: "4 - 6 hours",
+        serves: "4",     
+        tags: [
+            "slow cooker",
+        ],
+        link: "https://www.inspiredtaste.net/37475/homemade-chicken-noodle-soup-recipe/",
+        ingredients: [
+            "Chicken Breasts: 2",
+            "Diced Onion",
+            "Carrots: 2",
+            "Celery: 1 to 2 sticks",
+            "Garlic Puree: 2 tsp",
+            "Bay Leaves: 2",
+            "Thyme: 1/2 tsp",
+            "Ginger: 1/4 tsp",
+            "Chicken Stock: 1.25L",
+            "Pasta/Noodles: 150g"
+        ],
+        instructions: [
+            "Add <span>all ingredients</span> (except your <span>noodles</span>) to your slow cooker and stir. Add the <span>chicken breasts</span> whole and uncooked.",
+            "Cook for at least 6 hours on low, or 4 hours on high.",
+            "About an hour (or as close to this as possible) before serving, shred the <span>chicken breasts</span>",
+            "About 10 minutes from serving, add your <span>noodles</span>",
+            "Once the pasta is cooked through, serve up!"
+        ],
+        notes: [
+            "Best enjoyed with crusty bread and butter in my opinion!",
+        ]
+    },
+
+    BeefMeatballCurry: {
+        title: "Beef Meatball Curry",
+        time: "25 mins",
+        serves: "2",     
+        tags: [
+            "30 mins or less",
+        ],
+        link: "https://www.gousto.co.uk/cookbook/recipes/beef-meatball-spinach-curry-with-rice",
+        ingredients: [
+            "Beef Meatballs: 12 - 16 (6 - 8 each)",
+            "Garlic Puree: 1 tsp",
+            "Curry Powder: 1 tbsp",
+            "Tomato Puree: 2 tbsp",
+            "Butter: 1 tsp",
+            "Beef Stock: 230ml",
+            "Spinach",
+            "Rice: 150g"
+        ],
+        instructions: [
+            "On a high heat, cook your <span>meatballs</span> for a couple of minutes on each side, until browned.",
+            "Reduce the heat to medium and add your <span>butter</span>, <span>curry powder</span>, and <span>tomato puree</span>. Cook until fragrant.",
+            "Add your <span>beef stock</span> to the pan with <span>salt</span> and <span>pepper</span> to taste. Bring to the boil.",
+            "Once bubbling, reduce the heat to a low-medium, and cook covered for as long as it takes to cook the <span>rice</span>.",
+            "Just before serving, add a handful of <span>spinach</span>, and stir through until wilted.",
+            "Enjoy!"
+        ],
+        notes: [
+            "",
         ]
     }
 }

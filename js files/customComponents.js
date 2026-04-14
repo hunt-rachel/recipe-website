@@ -87,7 +87,7 @@ class RecipeListing extends HTMLElement{
 
         this.innerHTML = `
         <div class="recipeListing centerVertical row">
-            <div class="star">&#9733;</div>
+            <div class="heart">&#9829;</div>
             <div class="listingText column">
                 <a href="recipe-instructions.html?id=${id}"&prev=${id}>${recipeName}</a>
                 <div class="tags row">

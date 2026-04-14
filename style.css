@@ -28,10 +28,10 @@
     --ingredientTxt: #852929;
 
     --timingYellow: #EBBB05;
-    --starYellow: #be9b1c;
+    --heartRed: #ac1d1d;
 
     /*spacings*/
-    --starSize: 2.5vw;
+    --heartSize: 2.5vw;
     --tagGap: 5px;
     --tagPadding: 3px 10px 4px;;
 
@@ -81,6 +81,7 @@
 
 body {
     background-color: var(--bodyBG);
+    min-width: 800px;
 }
 
 /*navigation bar classes*/
@@ -267,13 +268,14 @@ body {
     font-size: max(var(--listingName), 24px);
 }
 
-.star {
-    font-size: max(var(--starSize), 30px);
+.heart {
+    font-size: max(var(--heartSize), 30px);
     color: grey;
+    padding: 0px 10px;
 }
 
-.star:hover{
-    color: var(--starYellow);
+.heart:hover{
+    color: var(--heartRed);
     cursor: pointer;
 }
 
@@ -352,21 +354,23 @@ body {
     background-color: var(--headerBG);
 }
 
-#recipeTiming {
+.recipeInfo {
     margin-top: 20px;
+    gap: var(--tagGap);
 }
 
-#recipeTiming span{
+.recipeInfo span{
     background-color: var(--timingYellow);
 
     border-radius: 15px;
     padding: 3px 10px 4px;
 
     font-size: max(var(--listingTag), 18px);
+    margin-right: 10px;
 }
 
 .instructionsText {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .instructionsText h2 {
