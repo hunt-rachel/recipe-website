@@ -96,9 +96,23 @@ body {
 
 .navBar h1{
     color: white;
-    text-decoration: underline 2px;
 
     font-size: max(2vw, 20px);
+}
+
+#navTitleText {
+    text-decoration: underline;
+}
+
+#prevBtn{
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+#prevBtn:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+    cursor: pointer;
 }
 
 .overlay {
@@ -165,22 +179,42 @@ body {
     margin-left: auto;
 }
 
-.navBar input[type=text] {
-    width: 30vw;
+.searchbarContainer {
+    display: inline-block;
+    background-color: white;
+
+    border-radius: 50px;
+}
+
+.searchbarContainer input[type=text] {
+    width: 25vw;
     min-width: 200px;
 
     height: 3vw;
-    
-    padding: 10px;
-    margin-top: auto;
 
-    border-radius: 50px;
+    border: 0;
 
-    font-size: max(1vw, 16px);
+    font-size: max(1.25vw, 16px);
+
+    color: grey;
+    background: none;
+
+    padding: 1vw;
+    padding-right: 0;
 }
 
-.navBar .searchbarContainer button {
+.searchbarContainer button {
     cursor: pointer;
+    background: none;
+
+    border: 0;
+
+    font-size: 2vw;
+
+    color: grey;
+    margin-right: 1vw;
+
+    transform: scaleX(-1);
 }
 
 /*home classes*/

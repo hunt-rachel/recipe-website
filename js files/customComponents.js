@@ -12,13 +12,33 @@ class NavigationBar extends HTMLElement {
                <div class="searchbarContainer centerVertical">
                     <form action="/recipes-list.html">
                         <input type="text" placeholder="search here...">
-                        <button type="submit">go!</button>
+                        <button type="submit">&#8981</button>
                     </form>
                 </div>
             </div>`;
     }
 }
 customElements.define("nav-bar", NavigationBar);
+
+class SecondaryNavBar extends HTMLElement {
+    connectedCallback(){
+        const navText = this.getAttribute("navText");
+
+        this.innerHTML = `
+            <div class="navBar row centerVertical" id="nav">
+               <span class=navIcon onclick="openOverlay()">&#9776</span>
+               <h1 id=prevBtn onclick="history.back()">&#8617;</h1>
+               <h1 id="navTitleText">${navText}</h1>
+               <div class="searchbarContainer centerVertical">
+                    <form action="/recipes-list.html">
+                        <input type="text" placeholder="search here...">
+                        <button type="submit">&#8981</button>
+                    </form>
+                </div>
+            </div>`;
+    }
+}
+customElements.define("nav-bar-2", SecondaryNavBar);
 
 /*navigation overlay*/
 class NavigationOverlay extends HTMLElement {
@@ -69,7 +89,7 @@ class RecipeListing extends HTMLElement{
         <div class="recipeListing centerVertical row">
             <div class="star"></div>
             <div class="listingText column">
-                <a href="recipe-instructions.html?id=${id}">${recipeName}</a>
+                <a href="recipe-instructions.html?id=${id}"&prev=${id}>${recipeName}</a>
                 <div class="tags row">
                     <p>${currTags}</p>
                 </div>
