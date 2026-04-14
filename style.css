@@ -27,7 +27,8 @@
     --overlayHoverTxt: #f1f1f1;
     --ingredientTxt: #852929;
 
-    --starYellow: #EBBB05;
+    --timingYellow: #EBBB05;
+    --starYellow: #be9b1c;
 
     /*spacings*/
     --starSize: 2.5vw;
@@ -267,12 +268,13 @@ body {
 }
 
 .star {
-    width: max(var(--starSize), 30px);
-    height: max(var(--starSize), 30px);
-    aspect-ratio: 1;
-    clip-path: polygon(50% 0,79% 90%,2% 35%,98% 35%,21% 90%); 
-    background-color: blueviolet;
-    outline: #4CAF50 solid 4px;
+    font-size: max(var(--starSize), 30px);
+    color: grey;
+}
+
+.star:hover{
+    color: var(--starYellow);
+    cursor: pointer;
 }
 
 .tags{
@@ -355,7 +357,7 @@ body {
 }
 
 #recipeTiming span{
-    background-color: var(--starYellow);
+    background-color: var(--timingYellow);
 
     border-radius: 15px;
     padding: 3px 10px 4px;
