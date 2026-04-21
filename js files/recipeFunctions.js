@@ -336,3 +336,50 @@ const recipesObj = {
         ]
     }
 }
+
+//favourites functionality
+var favouritesArr;
+
+function displayFavouritesListings(){
+    const favListingsDiv = document.getElementById("favDiv");
+    
+    if(favouritesArr.length > 0) {
+        
+        
+        for(let i = 0; i < favouritesArr.length; i++) {
+            let listing = document.createElement("recipe-listing");
+            listing.id = favouritesArr[i];
+            favListingsDiv.appendChild(listing)
+        }
+    }
+}
+
+function addToFavourites(rID) {
+    //prevents doubles bug
+    if(!favouritesArr.includes(rID)) {
+        favouritesArr.push(rID);
+    }
+}
+
+function removeFromFavourites(rID) {
+    //prevents removing listing that isn't there bug
+    if(favouritesArr.includes(rID)) {
+        const removalIndex = favouritesArr.indexOf(rID);
+        favouritesArr.splice(removalIndex, 1);
+    }
+}
+
+/*function toggleFavourite(rID) {
+    let currHeartID = "heart".concat(rID);
+    let currHeart = document.getElementById(currHeartID);
+
+    if(currHeart.classList.contains("favourite")) {
+        removeFromFavourites(rID);
+        currHeart.classList.remove("favoruite");
+    }
+
+    else {
+        addToFavourites(rID);
+        currHeart.classList.add("favourite");
+    }
+}*/

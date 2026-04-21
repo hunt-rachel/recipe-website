@@ -11,6 +11,7 @@
         <!--scripts definitions-->
         <script src="js files/customComponents.js"></script>
         <script src="js files/buttonFunctions.js"></script>
+        <script src="js files/recipeFunctions.js"></script>
         
         <!--navigation bar-->
         <nav-bar
@@ -19,5 +20,15 @@
         
         <nav-overlay></nav-overlay>
 
+        <!--favourite recipe listings-->
+        <div class="favListings" id="favDiv">
+
+        </div>
+
     </body>
+
+    <script>
+    window.onload = displayFavouritesListings();
+    </script>
+
 </html>

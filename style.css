@@ -25,7 +25,7 @@
 
     --overlayTxt: #818181;
     --overlayHoverTxt: #f1f1f1;
-    --ingredientTxt: #852929;
+    --ingredientTxt: #ac1d1d;
 
     --timingYellow: #EBBB05;
     --heartRed: #ac1d1d;
@@ -266,12 +266,23 @@ body {
 
 .listingText a{
     font-size: max(var(--listingName), 24px);
+    color: black;
+}
+
+.listingText a:visited {
+    color: black;
 }
 
 .heart {
     font-size: max(var(--heartSize), 30px);
     color: grey;
     padding: 0px 10px;
+    background: none;
+    border: none;
+}
+
+.favourite {
+    color: var(--heartRed);
 }
 
 .heart:hover{
@@ -298,6 +309,10 @@ body {
     margin-right: 10px;
 
     font-size: max(1.25vw, 18px);
+}
+
+.hidden {
+    display: none;
 }
 
 /*instruction page classes*/
