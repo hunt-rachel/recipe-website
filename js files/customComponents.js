@@ -33,7 +33,7 @@ class SecondaryNavBar extends HTMLElement {
                <h1 id="navTitleText">${navText}</h1>
                <div class="searchbarContainer centerVertical">
                     <form action="/recipes-search.html">
-                        <input type="text" id="searchInput" placeholder="search here...">
+                        <input type="search" id="searchInput" placeholder="search here...">
                         <button type="submit">&#8981</button>
                     </form>
                 </div>

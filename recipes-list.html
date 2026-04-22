@@ -10,8 +10,8 @@
     <body>
         <!--scripts definitions-->
         <script src="js files/customComponents.js"></script> 
-        <script src="js files/buttonFunctions.js"></script>
         <script src="js files/recipeFunctions.js"></script>
+        <script src="js files/buttonFunctions.js"></script>
         
         <!--navigation bar-->
         <nav-bar
@@ -35,8 +35,6 @@
         for(let i = 0; i < hearts.length; i++) {
             hearts[i].addEventListener("click", toggleFavourite);
         }
-
-        var masterAutocompleteArr = ["test1", "second test", "threee"];
 
         autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
 

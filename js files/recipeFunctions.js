@@ -67,7 +67,7 @@ function displayRecipeInstructions(rID) {
         ],
         link: "",
         ingredients: [
-            "",
+            "", 
         ],
         instructions: [
             "<span></span>",
@@ -339,6 +339,24 @@ const recipesObj = {
         ]
     }
 }
+
+//**autocomplete array */
+var masterAutocompleteArr = [
+    /**recipes */
+    "Beef Katsu Curry Noodles",
+    "Beef Meatball Curry",
+    "Chicken Biryani",
+    "Chicken Noodle Soup",
+    "Cuban Style Beef",
+    "Lentil Dahl",
+    "Marry Me Chicken Orzo",
+    "Sausage and Pepper Pasta Bake"
+
+    /**tags */
+
+];
+
+
 
 //favourites functionality
 var favouritesArr;
