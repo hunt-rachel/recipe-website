@@ -30,13 +30,17 @@ function autocomplete(inp, arr) {
 
         for(let i = 0; i < arr.length; i++) {
             /**check if item starts with same letters as input text value */
-            if(arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+            if(arr[i].toUpperCase().includes(val.toUpperCase())) { 
                 /**create div for each matching element */
                 b = document.createElement("div");
+                b.setAttribute("class", "autocomplete-item-text");
 
                 /**bold the matching letters */
-                b.innerHTML = `<strong>${arr[i].substr(0, val.length)}<strong>`;
-                b.innerHTML += arr[i].substr(val.length);
+                var outputStr = arr[i].toUpperCase().replace(val.toUpperCase(), `<b>${val.toUpperCase()}</b>`);
+                
+                //set string to lower case so can be capitalised through css
+                b.innerHTML = outputStr.toLowerCase();
+
 
                 /**input field to hold curr array item value */
                 b.innerHTML += `<input type='hidden' value="${arr[i]}">`;

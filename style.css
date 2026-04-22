@@ -259,6 +259,10 @@ body {
     color: #ffffff;
 }
 
+.autocomplete-item-text {
+    text-transform: capitalize;
+}
+
 /*home classes*/
 .homeWelcome{
     user-select: none;
