@@ -7,12 +7,14 @@ class NavigationBar extends HTMLElement {
 
         this.innerHTML = `
             <div class="navBar row centerVertical" id="nav">
-               <span class=navIcon onclick="openOverlay()">&#9776</span>
-               <h1 id="navTitleText">${navText}</h1>
-               <div class="searchbarContainer centerVertical">
-                    <form action="/recipes-list.html">
-                        <input type="text" placeholder="search here...">
-                        <button type="submit">&#8981</button>
+                <span class=navIcon onclick="openOverlay()">&#9776</span>
+                <h1 id="navTitleText">${navText}</h1>
+                <div class="searchbarContainer centerVertical">
+                    <form autocomplete="off" action="/recipes-search.html">
+                        <div class="autocomplete">
+                            <input type="search" id="searchInput" placeholder="search here...">
+                            <button type="submit">&#8981</button>
+                        </div>
                     </form>
                 </div>
             </div>`;
@@ -30,8 +32,8 @@ class SecondaryNavBar extends HTMLElement {
                <h1 id=prevBtn onclick="history.back()">&#8617;</h1>
                <h1 id="navTitleText">${navText}</h1>
                <div class="searchbarContainer centerVertical">
-                    <form action="/recipes-list.html">
-                        <input type="text" placeholder="search here...">
+                    <form action="/recipes-search.html">
+                        <input type="text" id="searchInput" placeholder="search here...">
                         <button type="submit">&#8981</button>
                     </form>
                 </div>

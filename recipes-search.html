@@ -14,20 +14,12 @@
         <script src="js files/recipeFunctions.js"></script>
         
         <!--navigation bar-->
-        <nav-bar
-            navText="all recipes"
-        ></nav-bar>
+        <nav-bar-2
+            navText="recipe name"
+        ></nav-bar-2>
 
         <nav-overlay></nav-overlay>
         <!--recipe listings-->
-        <recipe-listing id="BeefKatsu"></recipe-listing>
-        <recipe-listing id="BeefMeatballCurry"></recipe-listing>
-        <recipe-listing id="ChickenBiryani"></recipe-listing>
-        <recipe-listing id="ChickenNoodleSoup"></recipe-listing>
-        <recipe-listing id="CubanBeef"></recipe-listing>
-        <recipe-listing id="LentilDahl"></recipe-listing>
-        <recipe-listing id="ChickenOrzo"></recipe-listing>
-        <recipe-listing id="SausagePasta"></recipe-listing>
 
     </body>
     <script>
@@ -35,10 +27,5 @@
         for(let i = 0; i < hearts.length; i++) {
             hearts[i].addEventListener("click", toggleFavourite);
         }
-
-        var masterAutocompleteArr = ["test1", "second test", "threee"];
-
-        autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
-
     </script>
 </html>
