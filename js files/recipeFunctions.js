@@ -59,6 +59,7 @@ function displayRecipeInstructions(rID) {
 /*
  * id: {
         title: "",
+        stringID: "",
         time: "",
         serves: "",     
         tags: [
@@ -80,6 +81,7 @@ function displayRecipeInstructions(rID) {
 const recipesObj = {
     LentilDahl: {
         title: "Lentil Dahl",
+        stringID: "LentilDahl",
         time: "1 hour",
         serves: "6",
         tags: [
@@ -115,6 +117,7 @@ const recipesObj = {
 
     BeefKatsu: {
         title: "Beef Katsu Curry Noodles",
+        stringID: "BeefKatsu",
         time: "20 minutes",
         serves: "2",     
         tags: [
@@ -344,8 +347,6 @@ function displayFavouritesListings(){
     const favListingsDiv = document.getElementById("favDiv");
     
     if(favouritesArr.length > 0) {
-        
-        
         for(let i = 0; i < favouritesArr.length; i++) {
             let listing = document.createElement("recipe-listing");
             listing.id = favouritesArr[i];
@@ -369,17 +370,16 @@ function removeFromFavourites(rID) {
     }
 }
 
-/*function toggleFavourite(rID) {
-    let currHeartID = "heart".concat(rID);
-    let currHeart = document.getElementById(currHeartID);
+function toggleFavourite() {
+    var favouritesTestDiv = document.getElementById("favouritesArray");
+    
+    this.classList.toggle("favourite");
 
-    if(currHeart.classList.contains("favourite")) {
-        removeFromFavourites(rID);
-        currHeart.classList.remove("favoruite");
+    /*if(this.classList.contains("favourite")) {
+        addToFavourites(this.id);
     }
 
     else {
-        addToFavourites(rID);
-        currHeart.classList.add("favourite");
-    }
-}*/
+        removeFromFavourites(this.id);
+    }*/
+}

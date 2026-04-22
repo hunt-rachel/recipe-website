@@ -286,7 +286,6 @@ body {
 }
 
 .heart:hover{
-    color: var(--heartRed);
     cursor: pointer;
 }
 

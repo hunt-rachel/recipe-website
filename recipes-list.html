@@ -19,7 +19,6 @@
         ></nav-bar>
 
         <nav-overlay></nav-overlay>
-
         <!--recipe listings-->
         <recipe-listing id="BeefKatsu"></recipe-listing>
         <recipe-listing id="BeefMeatballCurry"></recipe-listing>
@@ -29,5 +28,14 @@
         <recipe-listing id="LentilDahl"></recipe-listing>
         <recipe-listing id="ChickenOrzo"></recipe-listing>
         <recipe-listing id="SausagePasta"></recipe-listing>
+
+        <button onclick="displayFavouritesArr()">display favourites arr</button>
+        <ul id="testList"></ul>
     </body>
+    <script>
+        const hearts = document.querySelectorAll(".heart");
+        for(let i = 0; i < hearts.length; i++) {
+            hearts[i].addEventListener("click", toggleFavourite);
+        }
+    </script>
 </html>

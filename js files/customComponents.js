@@ -76,6 +76,7 @@ class RecipeListing extends HTMLElement{
 
         const recipeName = recipesObj[id].title;
         var recipeTags = recipesObj[id].tags.slice();
+        const heartID = recipesObj[id].stringID;
 
         var currTags = "";
         
@@ -87,7 +88,7 @@ class RecipeListing extends HTMLElement{
 
         this.innerHTML = `
         <div class="recipeListing centerVertical row">
-            <button class="heart">&#9829;</button>
+            <button class="heart" id="${id}">&#9829;</button>
             <div class="listingText column">
                 <a href="recipe-instructions.html?id=${id}"&prev=${id}>${recipeName}</a>
                 <div class="tags row">
