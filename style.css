@@ -171,6 +171,7 @@ body {
     cursor: pointer;
 
     margin-right: 20px;
+    margin-left: 20px;
 
     color: white;
     font-size: 2vw;
@@ -185,7 +186,8 @@ body {
     display: inline-block;
     background-color: white;
 
-    border-radius: 50px;
+    border-radius: 0px;
+    margin-right: 20px;
 }
 
 .searchbarContainer input[type=search] {
@@ -197,6 +199,7 @@ body {
     border: 0;
 
     font-size: max(1.25vw, 16px);
+    font-family:'Times New Roman', Times, serif;
 
     color: grey;
     background: none;
@@ -238,8 +241,7 @@ body {
 
     /*make items same width as autocomplete container*/
     top: 100%;
-    left: 0;
-    right: 0;
+    width: 20vw;
 }
 
 .autocomplete-items div {
@@ -301,6 +303,7 @@ body {
 .recipeListing {
     margin: 10px;
     margin-bottom: 25px;
+    margin-left: 30px;
 }
 
 .listingText{

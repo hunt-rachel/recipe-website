@@ -356,48 +356,74 @@ var masterAutocompleteArr = [
 
 ];
 
-
-
 //favourites functionality
-var favouritesArr;
-
 function displayFavouritesListings(){
     const favListingsDiv = document.getElementById("favDiv");
+    var favouritesArr = JSON.parse(localStorage['favourites']);
     
     if(favouritesArr.length > 0) {
         for(let i = 0; i < favouritesArr.length; i++) {
             let listing = document.createElement("recipe-listing");
             listing.id = favouritesArr[i];
+
+            //set heart to favourite by default
+
             favListingsDiv.appendChild(listing)
         }
     }
 }
 
 function addToFavourites(rID) {
-    //prevents doubles bug
-    if(!favouritesArr.includes(rID)) {
-        favouritesArr.push(rID);
+    //checks favourites exists in local storage
+    if(localStorage.getItem('favourites')) {
+        let storage = JSON.parse(localStorage['favourites']);
+
+        //recipe id index not found, doesn't exist in favourites yet
+        if(storage.indexOf(rID) == -1) {
+            storage.push(rID);
+            localStorage.setItem('favourites', JSON.stringify(storage));
+            alert("added " + rID + " to storage.");
+        }
+
+        //edge case for if already exists in favourites - testing purposes
+        else {
+            alert(rID + " already in favourites");
+        }
+    }
+
+    //if favourites doesn't exist in local storage, create it
+    else {
+        var favStorageArr = [];
+        
+        //populate with first value
+        favStorageArr.push(rID);
+        localStorage.setItem("favourites", JSON.stringify(favStorageArr));
+        alert("set new favourites list for local storage\nadded " + rID + " to storage.");
     }
 }
 
 function removeFromFavourites(rID) {
-    //prevents removing listing that isn't there bug
-    if(favouritesArr.includes(rID)) {
-        const removalIndex = favouritesArr.indexOf(rID);
-        favouritesArr.splice(removalIndex, 1);
+    //checks favoruites exists in local storage (it should do at this point)
+    if(localStorage.getItem('favourites')) {
+        //get localStorage string as array
+        let storage = JSON.parse(localStorage['favourites']);
+        let removalIndex = storage.indexOf(rID);
+
+        //only splice array if rID found
+        if(removalIndex > -1) {
+            storage.splice(removalIndex, 1);
+        }
     }
 }
 
 function toggleFavourite() {
-    var favouritesTestDiv = document.getElementById("favouritesArray");
-    
     this.classList.toggle("favourite");
 
-    /*if(this.classList.contains("favourite")) {
+    if(this.classList.contains("favourite")) {
         addToFavourites(this.id);
     }
 
     else {
         removeFromFavourites(this.id);
-    }*/
+    }
 }
