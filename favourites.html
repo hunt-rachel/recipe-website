@@ -16,6 +16,7 @@
         <!--navigation bar-->
         <nav-bar
             navText="favourites"
+            btnState="hidden"
         ></nav-bar>
         
         <nav-overlay></nav-overlay>
@@ -32,7 +33,7 @@
 
     if(localStorage.getItem('favourites')) { 
         var favouritesArr = JSON.parse(localStorage['favourites']);
-    }
+    } 
     
 
     const hearts = document.querySelectorAll(".heart");

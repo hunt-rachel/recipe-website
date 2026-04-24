@@ -118,3 +118,10 @@ function autocomplete(inp, arr) {
         closeAllLists(e.target);
     })
 }
+
+function assignBackBtn() {
+    //prevents double class assignment
+    if(document.getElementById(prevBtn).classList.contains("hidden") == false) {
+        document.getElementById(prevBtn).classList.add("hidden");
+    }
+}

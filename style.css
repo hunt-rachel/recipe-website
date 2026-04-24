@@ -129,14 +129,14 @@ body {
     transition: 0.5s;
 }
 
-.overlayLinks {
+#overlayLinks {
     position: relative;
     top: 25%;
     text-align: center;
     margin-top: 30px;
 }
 
-.overlayLinks a, .overlayLinks a:visited {
+#overlayLinks a, #overlayLinks a:visited {
     padding: 8px;
     text-decoration: none;
     font-size: max(var(--overlayA), 20px);
@@ -145,7 +145,7 @@ body {
     transition: 0.2s;
 }
 
-.overlayLinks a:hover, .overlayLinks a:focus {
+#overlayLinks a:hover, #overlayLinks a:focus {
     color: var(--overlayHoverTxt);
     text-decoration: underline;
 }
