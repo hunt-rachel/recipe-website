@@ -125,3 +125,18 @@ function assignBackBtn() {
         document.getElementById(prevBtn).classList.add("hidden");
     }
 }
+
+function assignSearchValue(inp) {
+    var val = inp.value;
+    var searchBtn = document.getElementById("searchBtn");
+
+    //if search empty
+    if(val == "") {
+        searchBtn.href="/recipes-list.html";
+    }
+
+    //if search not empty
+    else {
+        searchBtn.href = "/recipes-search.html?search=" + val;
+    }
+}

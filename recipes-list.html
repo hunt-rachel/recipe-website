@@ -46,7 +46,11 @@
             }
         }
 
-        autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
+        const searchInput = document.getElementById("searchInput");
+        const searchBtn = document.getElementById("searchBtn");
+        
+        autocomplete(searchInput, masterAutocompleteArr);
 
+        searchBtn.addEventListener("click", function(){assignSearchValue(searchInput)});
     </script>
 </html>

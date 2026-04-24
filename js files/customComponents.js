@@ -12,10 +12,10 @@ class NavigationBar extends HTMLElement {
                 <h1 class="${btnState}" id="prevBtn" onclick="history.back()">&#8617;</h1>
                 <h1 id="navTitleText">${navText}</h1>
                 <div class="searchbarContainer centerVertical">
-                    <form autocomplete="off" action="/recipes-search.html">
+                    <form id="searchForm" autocomplete="off">
                         <div class="autocomplete">
                             <input type="search" id="searchInput" placeholder="search here...">
-                            <button type="submit">&#8981</button>
+                            <a id="searchBtn">&#8981</a>
                         </div>
                     </form>
                 </div>
@@ -74,7 +74,7 @@ class RecipeListing extends HTMLElement{
         <div class="recipeListing centerVertical row">
             <button class="heart" id="${id}">&#9829;</button>
             <div class="listingText column">
-                <a href="recipe-instructions.html?id=${id}"&prev=${id}>${recipeName}</a>
+                <a href="recipe-instructions.html?id=${id}">${recipeName}</a>
                 <div class="tags row">
                     <p>${currTags}</p>
                 </div>

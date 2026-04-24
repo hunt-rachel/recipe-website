@@ -31,7 +31,7 @@
     --heartRed: #ac1d1d;
 
     /*spacings*/
-    --heartSize: 2.5vw;
+    --heartSize: 3vw;
     --tagGap: 5px;
     --tagPadding: 3px 10px 4px;;
 
@@ -89,7 +89,7 @@ body {
     width: 100vw;
     height: 5vw;
     
-    padding: 5px 20px;
+    padding: 5px 2vw;
 
     background-color: var(--headerBG);
 
@@ -104,17 +104,6 @@ body {
 
 #navTitleText {
     text-decoration: underline;
-}
-
-#prevBtn{
-    text-decoration: none;
-    padding-right: 10px;
-}
-
-#prevBtn:hover {
-    text-decoration: underline;
-    text-decoration-color: white;
-    cursor: pointer;
 }
 
 .overlay {
@@ -171,10 +160,20 @@ body {
     cursor: pointer;
 
     margin-right: 20px;
-    margin-left: 20px;
 
     color: white;
     font-size: 2vw;
+}
+
+#prevBtn{
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+#prevBtn:hover {
+    text-decoration: underline;
+    text-decoration-color: white;
+    cursor: pointer;
 }
 
 /*search bar classes*/
@@ -187,7 +186,6 @@ body {
     background-color: white;
 
     border-radius: 0px;
-    margin-right: 20px;
 }
 
 .searchbarContainer input[type=search] {
@@ -205,14 +203,15 @@ body {
     background: none;
 
     padding: 1vw;
-    padding-right: 0;
 }
 
 .searchbarContainer input[type=search]:focus {
     outline: none;
 }
 
-.searchbarContainer button {
+.searchbarContainer a {
+    display: inline-block;
+    
     cursor: pointer;
     background: none;
 
@@ -301,13 +300,11 @@ body {
 
 /*recipe listing classes*/
 .recipeListing {
-    margin: 10px;
-    margin-bottom: 25px;
-    margin-left: 30px;
+    margin: 10px 10px 25px 2vw;
 }
 
 .listingText{
-    margin-left: 10px;
+    margin-left: 30px;
     gap: 10px
 }
 
@@ -321,9 +318,8 @@ body {
 }
 
 .heart {
-    font-size: max(var(--heartSize), 30px);
+    font-size: max(var(--heartSize), 36px);
     color: grey;
-    padding: 0px 10px;
     background: none;
     border: none;
 }
@@ -334,6 +330,7 @@ body {
 
 .heart:hover{
     cursor: pointer;
+    color: var(--heartRed);
 }
 
 .tags{
