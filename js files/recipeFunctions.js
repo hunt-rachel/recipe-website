@@ -382,7 +382,7 @@ function addToFavourites(rID) {
         if(storage.indexOf(rID) == -1) {
             storage.push(rID);
             localStorage.setItem('favourites', JSON.stringify(storage));
-            alert("added " + rID + " to storage.");
+            //alert("added " + rID + " to storage."); //debug alert
         }
 
         //edge case for if already exists in favourites - testing purposes
@@ -398,7 +398,9 @@ function addToFavourites(rID) {
         //populate with first value
         favStorageArr.push(rID);
         localStorage.setItem("favourites", JSON.stringify(favStorageArr));
-        alert("set new favourites list for local storage\nadded " + rID + " to storage.");
+        
+        //alert test for debugging
+        //alert("set new favourites list for local storage\nadded " + rID + " to storage.");
     }
 }
 
@@ -412,7 +414,11 @@ function removeFromFavourites(rID) {
         //only splice array if rID found
         if(removalIndex > -1) {
             storage.splice(removalIndex, 1);
+            localStorage.setItem("favourites", JSON.stringify(storage));
+            //alert("favourites now only includes" + storage); //debug alert
         }
+
+        
     }
 }
 

@@ -9,7 +9,8 @@
     </head>
     <body>
         <!--scripts definitions-->
-        <script src="js files/customComponents.js"></script>
+        <script src="js files/customComponents.js"></script> 
+        <script src="js files/recipeFunctions.js"></script>
         <script src="js files/buttonFunctions.js"></script>
         
         <!--navigation bar-->
@@ -41,6 +42,10 @@
                 linkText="surprise me!"
             ></home-link>
         </div>
+
+        <script>
+            autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
+        </script>
 
     </body>
 </html>
