@@ -350,11 +350,41 @@ var masterAutocompleteArr = [
     "Cuban Style Beef",
     "Lentil Dahl",
     "Marry Me Chicken Orzo",
-    "Sausage and Pepper Pasta Bake"
+    "Sausage and Pepper Pasta Bake" 
 
     /**tags */
 
 ];
+
+//function for displaying search results
+function displaySearchResults(searchVal) {
+    const currNavTitle = document.getElementById("navTitleText");
+    const searchListingsDiv = document.getElementById("searchDiv");
+
+    var foundResults = false;
+
+    currNavTitle.innerHTML = `<h1 id="navTitleText">Searching For: <i>${searchVal}</i></h1>`;
+
+    for(var r in recipesObj) {
+        let titleToCheck = recipesObj[r].title.toUpperCase();
+
+        //found relevant search result
+        if(titleToCheck.includes(searchVal.toUpperCase())) {
+            foundResults = true;
+
+            let listing = document.createElement("recipe-listing");
+            listing.id = r;
+
+            searchListingsDiv.appendChild(listing);
+        }
+    }
+
+    //no relevant listings found
+    if(!foundResults) {
+        alert("no relevant listings found");
+    }
+}
+
 
 //favourites functionality
 function displayFavouritesListings(){
@@ -365,8 +395,6 @@ function displayFavouritesListings(){
         for(let i = 0; i < favouritesArr.length; i++) {
             let listing = document.createElement("recipe-listing");
             listing.id = favouritesArr[i];
-
-            //set heart to favourite by default
 
             favListingsDiv.appendChild(listing)
         }

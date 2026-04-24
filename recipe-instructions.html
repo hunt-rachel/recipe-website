@@ -9,7 +9,7 @@
     </head> 
     <body>
         <!--scripts definitions-->
-        <script src="js files/customComponents.js"></script>
+        <script src="js files/customComponents.js"></script> 
         <script src="js files/buttonFunctions.js"></script>
         <script src="js files/recipeFunctions.js"></script>
         
@@ -68,5 +68,7 @@
     window.onload = displayRecipeInstructions(currID);
 
     autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
+
+    searchBtn.addEventListener("click", function(){assignSearchValue(searchInput)});
 </script>
 </html>

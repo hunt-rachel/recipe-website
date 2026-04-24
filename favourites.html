@@ -29,25 +29,26 @@
     </body>
 
     <script>
-    window.onload = displayFavouritesListings();
+        window.onload = displayFavouritesListings();
 
-    if(localStorage.getItem('favourites')) { 
-        var favouritesArr = JSON.parse(localStorage['favourites']);
-    } 
+        if(localStorage.getItem('favourites')) { 
+            var favouritesArr = JSON.parse(localStorage['favourites']);
+        } 
     
 
-    const hearts = document.querySelectorAll(".heart");
-    for(let i = 0; i < hearts.length; i++) {
-        hearts[i].addEventListener("click", toggleFavourite);
+        const hearts = document.querySelectorAll(".heart");
+        for(let i = 0; i < hearts.length; i++) {
+            hearts[i].addEventListener("click", toggleFavourite);
 
-        //check if recipe listing id found in local storage favourites
-        if(favouritesArr.includes(hearts[i].parentNode.parentNode.id)) {
-            hearts[i].classList.add("favourite");
+            //check if recipe listing id found in local storage favourites
+            if(favouritesArr.includes(hearts[i].parentNode.parentNode.id)) {
+                hearts[i].classList.add("favourite");
+            }
         }
-    }
 
-    autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
+        autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
     
+        searchBtn.addEventListener("click", function(){assignSearchValue(searchInput)});
     </script>
 
 </html>

@@ -20,15 +20,25 @@
         ></nav-bar>
 
         <nav-overlay></nav-overlay> 
-        <!--recipe listings-->
+        <!--recipe search listings-->
+        <div class="searchListings" id="searchDiv">
+
+        </div>
 
     </body>
     <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const searchVal = urlParams.get('search');
+
+        window.onload = displaySearchResults(searchVal);
+        
         const hearts = document.querySelectorAll(".heart");
         for(let i = 0; i < hearts.length; i++) {
             hearts[i].addEventListener("click", toggleFavourite);
         }
 
         autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
+
+        searchBtn.addEventListener("click", function(){assignSearchValue(searchInput)});
     </script>
 </html>
