@@ -22,6 +22,7 @@
     --overlayBG: #000000e0;
     --tagBG: #AADBD5;
     --ingredientsBG: #386B64;
+    --filterBG: #aadbd585;
 
     --overlayTxt: #818181;
     --overlayHoverTxt: #f1f1f1;
@@ -53,6 +54,7 @@
     /*font weight*/
     --lightHeader: 50;
 
+    --siteFont: 'Times New Roman', Times, serif;
 
     --dotSize: 16px;
 }
@@ -199,7 +201,7 @@ body {
     border: 0;
 
     font-size: max(1.25vw, 16px);
-    font-family:'Times New Roman', Times, serif;
+    font-family: var(--siteFont);
 
     color: grey;
     background: none;
@@ -348,6 +350,10 @@ body {
     color: black;
 }
 
+.listingsBody {
+    justify-content: space-between;
+}
+
 .heart {
     font-size: max(var(--heartSize), 36px);
     color: grey;
@@ -376,7 +382,7 @@ body {
     font-weight: bold;
     font-family: sans-serif;
 
-    border-radius: 15px;
+    border-radius: 50px;
 
     font-style: italic;
     padding: var(--tagPadding);
@@ -388,6 +394,60 @@ body {
 .hidden {
     display: none;
 }
+
+/*filter classes*/
+#filterForm {
+    margin-top: 1vw;
+    margin-right: 1vw;
+
+    text-align: right;
+
+    background-color: var(--filterBG);
+    border-radius: 15px;
+    border: 5px solid var(--headerBG);
+
+    padding: 20px;
+}
+
+#filterForm h2{
+    font-size: max(2.25vw, 24px); 
+    font-weight: 200;
+    letter-spacing: 0.5px;
+    text-decoration: underline;
+    margin-bottom: 5px;
+}
+
+.filterListing {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.filterListing label {
+    font-size: max(var(--listingName), 20px);
+    margin-right: 10px;
+}
+
+#filterForm input[type=checkbox] {
+    width: max(1vw, 20px);
+    border-radius: 50px;
+}
+
+#filterForm input[type=submit] {
+    margin-left: auto;
+    margin-top: 10px;
+
+    font-family: var(--siteFont);
+    font-size: max(1.2vw, 18px);
+
+    width: 100%;
+    background-color: var(--headerBG);
+    color: white;
+    border-radius: 30px;
+
+    font-size: max(1.75vw, 20px);
+    padding-bottom: 5px;
+}
+
 
 /*instruction page classes*/
 .ingredients {

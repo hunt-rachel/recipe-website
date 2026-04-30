@@ -88,7 +88,40 @@ class RecipeListing extends HTMLElement{
 }
 customElements.define("recipe-listing", RecipeListing);
 
-class RecipeTitle extends HTMLElement {
+class FilterBlock extends HTMLElement {
+    connectedCallback() {
+        this.innerHTML = `
+            <form id="filterForm" class="column">
+                <h2>filter by:</h2>
+                
+                <!--30 minutes or less-->
+                <div class="filterListing">
+                    <input type="checkbox" id="30orLess">
+                    <label for="30orLess">30 minutes or less</label>
+                </div>
 
+                <!--one pot-->
+                <div class="filterListing">
+                    <input type="checkbox" id="onePot">
+                    <label for="30orLess">one pot</label>
+                </div>
+
+                <!--slow cooker-->
+                <div class="filterListing">
+                    <input type="checkbox" id="slowCooker">
+                    <label for="30orLess">slow cooker</label>
+                </div>
+
+                <!--vegan-->
+                <div class="filterListing">
+                    <input type="checkbox" id="slowCooker">
+                    <label for="30orLess">vegan</label>
+                </div>
+
+                <!--submit btn-->
+                <input id="filterSubmitBtn" type="submit" value="go!">
+            </form>
+        `;
+    }
 }
-customElements.define("recipe-title", RecipeTitle);
+customElements.define("filter-block", FilterBlock);
