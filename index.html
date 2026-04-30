@@ -62,7 +62,13 @@
 
             //set start phrase for home page
             let randIndex = Math.floor(Math.random() * startPhrases.length);
-            document.getElementById("startPhrase").innerHTML = startPhrases[randIndex];
+            
+            function setStartPhrase() {
+                document.getElementById("startPhrase").innerHTML = startPhrases[randIndex];
+            }
+
+            //ensures different phrase displayed even if back button pressed
+            window.onload = setStartPhrase;
             
             autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
             searchBtn.addEventListener("click", function(){assignSearchValue(searchInput)});
