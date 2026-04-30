@@ -75,12 +75,18 @@ function autocomplete(inp, arr) {
             addActive(x);
         }
 
-        /**if enter key pressed, prevent form as whole from being submitted */
+        /**if enter key pressed and focus highlighted, enter that. else, enter form */
         else if(e.keyCode==13){
             e.preventDefault();
             if(currFocus > -1) {
                 /**simulate 'click' on active item */
                 if(x) x[currFocus].click();
+                //removes current focus to allow enter to submit form now autofill complete
+                currFocus = -1;
+            }
+
+            else {
+                document.getElementById("searchBtn").click();
             }
         }
     });
@@ -131,7 +137,7 @@ function assignSearchValue(inp) {
     var searchBtn = document.getElementById("searchBtn");
 
     //if search empty
-    if(val == "") {
+    if(val == "") { 
         searchBtn.href="/recipes-list.html";
     }
 

@@ -70,7 +70,10 @@
             //ensures different phrase displayed even if back button pressed
             window.onload = setStartPhrase;
             
-            autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
+            const searchInput = document.getElementById("searchInput");
+            const searchBtn = document.getElementById("searchBtn");
+            
+            autocomplete(searchInput, masterAutocompleteArr);
             searchBtn.addEventListener("click", function(){assignSearchValue(searchInput)});
         </script>
 
