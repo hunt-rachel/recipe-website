@@ -43,12 +43,15 @@ customElements.define("nav-overlay", NavigationOverlay);
 class HomeLink extends HTMLElement{
     connectedCallback(){
         const url = this.getAttribute("url");
-        const linkText = this.getAttribute("linkText")
+        const linkIcon = this.getAttribute("linkIcon");
+        const iconColour = this.getAttribute("iconColour");
+        const linkText = this.getAttribute("linkText");
         
         this.innerHTML = `
-            <div class="homeLinks">
-                <p><a href="${url}">${linkText}</a></p>
-            </div>`;
+            <div class="homeLinkSection centerTxt"><a href="${url}">
+                <h1 class=${iconColour}>${linkIcon}</h1>
+                <p>${linkText}</p>
+            </a></div>`;
     }
 }
 customElements.define("home-link", HomeLink);

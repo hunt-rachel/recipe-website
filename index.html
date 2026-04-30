@@ -23,28 +23,47 @@
 
         <!--home contents-->
         <div class="homeWelcome centerTxt">
-            <h1>awesome start phrase!</h1>
-            <h2>cool tagline to introduce concept of website</h2>
+            <h1 id="startPhrase">awesome start phrase!</h1>
+            <h2>Welcome to a collection of all of my favourite recipes. 
+                <br>Here, you can find food that's quick <i>and</i> easy to cook, while still being tasty!
+            </h2>
         </div>
 
         <div class="homeLinks row">
             <home-link 
-                url="recipes-list.html";
+                url="recipes-list.html"
+                linkIcon="&#128366;"
+                iconColour="teal"
                 linkText="all recipes"
             ></home-link>
 
             <home-link 
-                url="favourites.html";
+                url="favourites.html"
+                linkIcon="&#9829;"
+                iconColour="red"
                 linkText="favourites"
             ></home-link>
 
             <home-link 
-                url="recipe-instructions.html";
+                url="recipe-instructions.html"
+                linkIcon="?"
+                iconColour="purple"
                 linkText="surprise me!"
             ></home-link>
         </div>
 
         <script>     
+            var startPhrases = [
+                "Let's get cooking!",
+                "Ready for some fine dining?",
+                "What's on the menu for tonight?",
+                "Find your new favourite meal here!",
+            ]
+
+            //set start phrase for home page
+            let randIndex = Math.floor(Math.random() * startPhrases.length);
+            document.getElementById("startPhrase").innerHTML = startPhrases[randIndex];
+            
             autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
             searchBtn.addEventListener("click", function(){assignSearchValue(searchInput)});
         </script>

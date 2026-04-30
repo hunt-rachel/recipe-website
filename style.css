@@ -30,6 +30,8 @@
     --timingYellow: #EBBB05;
     --heartRed: #ac1d1d;
 
+    --surprisePurple: #7f1dac;
+
     /*spacings*/
     --heartSize: 3vw;
     --tagGap: 5px;
@@ -39,7 +41,7 @@
     --navBarText: 2rem;
     --homeH1: 5vw;
     --homeH2: 2vw;
-    --homeP: 2vw;
+    --homeP: 2.5vw;
 
     --overlayA: 3vw;
 
@@ -274,19 +276,42 @@ body {
     margin-bottom: 2.5vh;
 
     font-size: max(var(--homeH1), 48px);
+
 }
 
 .homeWelcome h2{
     font-size: max(var(--homeH2), 24px); 
     font-weight: var(--lightHeader);
 
-    margin-bottom: 20vh;
+    margin-bottom: 5vw;
 }
 
 .homeLinks{
+    display: flex;
     justify-content: space-around;
+    align-items: baseline;
 
-    font-size: max(var(--homeP), 20px);
+    
+}
+
+.homeLinkSection {
+    transition: filter 0.4s, transform 0.4s;
+}
+
+.homeLinkSection:hover {
+    transform: scale(1.05);
+}
+
+.teal {
+    color: var(--headerBG);
+}
+
+.red {
+    color: var(--heartRed)
+}
+
+.purple {
+    color: var(--surprisePurple);
 }
 
 .homeLinks a, a:visited{
@@ -294,7 +319,13 @@ body {
     text-decoration: none;
 }
 
-.homeLinks a:hover{
+.homeLinks h1 {
+    font-size: max(7vw, 60px);
+
+}
+
+.homeLinks p {
+    font-size: max(var(--homeP), 20px);
     text-decoration: underline;
 }
 
