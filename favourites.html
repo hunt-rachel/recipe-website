@@ -29,22 +29,13 @@
     </body>
 
     <script>
-        window.onload = displayFavouritesListings();
+        displayFavouritesListings();
 
         if(localStorage.getItem('favourites')) { 
             var favouritesArr = JSON.parse(localStorage['favourites']);
         } 
     
-
-        const hearts = document.querySelectorAll(".heart");
-        for(let i = 0; i < hearts.length; i++) {
-            hearts[i].addEventListener("click", toggleFavourite);
-
-            //check if recipe listing id found in local storage favourites
-            if(favouritesArr.includes(hearts[i].parentNode.parentNode.id)) {
-                hearts[i].classList.add("favourite");
-            }
-        }
+        assignHearts(favouritesArr);
 
         autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
     

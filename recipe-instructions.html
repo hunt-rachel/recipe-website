@@ -65,7 +65,7 @@
 <script>
     const urlParams = new URLSearchParams(window.location.search)
     const currID = urlParams.get('id');
-    window.onload = displayRecipeInstructions(currID);
+    displayRecipeInstructions(currID);
 
     autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
 

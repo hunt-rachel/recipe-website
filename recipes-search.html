@@ -30,15 +30,18 @@
         const urlParams = new URLSearchParams(window.location.search);
         const searchVal = urlParams.get('search');
 
-        window.onload = displaySearchResults(searchVal);
-        
-        const hearts = document.querySelectorAll(".heart");
-        for(let i = 0; i < hearts.length; i++) {
-            hearts[i].addEventListener("click", toggleFavourite);
+        if(localStorage.getItem('favourites')) { 
+            var favouritesArr = JSON.parse(localStorage['favourites']);
         }
 
-        autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
+        displaySearchResults(searchVal);
 
+        assignHearts(favouritesArr);
+
+        const searchInput = document.getElementById("searchInput");
+        const searchBtn = document.getElementById("searchBtn");
+        
+        autocomplete(searchInput, masterAutocompleteArr);
         searchBtn.addEventListener("click", function(){assignSearchValue(searchInput)});
     </script>
 </html>

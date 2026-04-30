@@ -140,3 +140,15 @@ function assignSearchValue(inp) {
         searchBtn.href = "/recipes-search.html?search=" + val;
     }
 }
+
+function assignHearts(fArr) {
+    const hearts = document.querySelectorAll(".heart");
+        for(let i = 0; i < hearts.length; i++) {
+            hearts[i].addEventListener("click", toggleFavourite);
+
+            //check if recipe listing id found in local storage favourites
+            if(fArr.length > 0 && fArr.includes(hearts[i].parentNode.parentNode.id)) {
+                hearts[i].classList.add("favourite");
+            }
+        }
+}
