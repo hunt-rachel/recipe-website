@@ -9,6 +9,7 @@ function displayRecipeInstructions(rID) {
     const rServing=document.getElementById("recipeServing");
     const rInspo=document.getElementById("recipeInspo");
     var instructionsList=document.getElementById("instructionsList");
+    var rNotes=document.getElementById("notesText");
 
     if(recipesObj.hasOwnProperty(rID)) {
         var recipe = recipesObj[rID];
@@ -50,6 +51,26 @@ function displayRecipeInstructions(rID) {
             instTxt.innerHTML = `${recipe.instructions[k]}`;
             instruction.appendChild(instTxt);
             instructionsList.appendChild(instruction);
+        }
+
+        /*adds notes section if included in recipe */
+        if(recipe.notes.length > 0 && recipe.notes[0] != "") {
+            let mainBody = document.querySelector(".mainInstBody")
+            
+            let notesDiv = document.createElement("div");
+            notesDiv.id = "notesText";
+
+            let notesTitle = document.createElement("h2");
+            notesTitle.innerHTML = `notes: `;
+            notesDiv.appendChild(notesTitle);
+
+            for(let i = 0; i < recipe.notes.length; i++) {
+                let notesTxt = document.createElement("p");
+                notesTxt.innerHTML = `<i>${recipe.notes[i]}`;
+                notesDiv.appendChild(notesTxt);
+            }
+
+            mainBody.appendChild(notesDiv);
         }
 
     }
@@ -140,7 +161,8 @@ const recipesObj = {
             "Serve up!"
         ],
         notes: [
-            "I recommend cooking your noodles in broth instead of water, makes them much more flavourful! Powdered boullion is good to sprinkle into the boiling water.",
+            "I recommend cooking your noodles in broth instead of water, makes them much more flavourful!",
+            "Powdered boullion is good to sprinkle into the boiling water."
         ]
     },
 

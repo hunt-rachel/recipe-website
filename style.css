@@ -86,6 +86,9 @@
 body {
     background-color: var(--bodyBG);
     min-width: 800px;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
 }
 
 /*navigation bar classes*/
@@ -430,6 +433,8 @@ body {
 #filterForm input[type=checkbox] {
     width: max(1vw, 20px);
     border-radius: 50px;
+
+    accent-color: var(--headerBG);
 }
 
 #filterForm input[type=submit] {
@@ -450,9 +455,12 @@ body {
 
 
 /*instruction page classes*/
+.instructionsBody {
+    flex: 1;
+}
+
 .ingredients {
     width: 25vw;
-    height: 100vh;
     
     background-color: var(--ingredientsBG);
     color: white;
@@ -477,6 +485,10 @@ body {
 
 .mainInstBody {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.recipeHeader {
     padding: 10px 20px;
 }
 
@@ -518,15 +530,19 @@ body {
     margin-right: 10px;
 }
 
+.recipeInfo a, a:visited {
+    color: black;
+}
+
 .instructionsText {
     margin-top: 10px;
 }
 
-.instructionsText h2 {
+.mainInstBody h2 {
     font-style: italic;
     text-decoration: underline;
 
-    font-size: max(2.5vw, 24px);
+    font-size: max(2.5vw, 30px);
 }
 
 .instructionsText ol {
@@ -542,4 +558,19 @@ body {
 
 .instructionsText li span {
     color: var(--ingredientTxt);
+}
+
+#notesText {
+    margin-bottom: 20px;
+}
+
+#notesText h2 {
+    padding-left: 20px;
+}
+
+#notesText p {
+    font-size: max(1.7vw, 24px);
+
+
+    padding: 10px 20px;
 }
