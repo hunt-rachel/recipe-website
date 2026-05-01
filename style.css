@@ -269,6 +269,7 @@ body {
 
 .autocomplete-item-text {
     text-transform: capitalize;
+    font-size: max(1.25vw, 16px);
 }
 
 /*home classes*/
