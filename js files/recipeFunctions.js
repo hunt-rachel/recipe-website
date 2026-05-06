@@ -385,6 +385,7 @@ var masterAutocompleteArr = [
 function displaySearchResults(searchVal) {
     const currNavTitle = document.getElementById("navTitleText");
     const searchListingsDiv = document.getElementById("searchDiv");
+    const filter = document.getElementById("filterForm");
 
     var foundResults = false;
 
@@ -404,7 +405,7 @@ function displaySearchResults(searchVal) {
             searchListingsDiv.appendChild(listing);
         }
 
-        //add else if for checking tags - to lower as all tags in lower case for style
+        //to lower as all tags in lower case for style
         //need to cycle through tags arr instead of just using includes to check for substring
         else {
             for(var tag in tagsToCheck) {
@@ -422,9 +423,65 @@ function displaySearchResults(searchVal) {
 
     //no relevant listings found
     if(!foundResults) {
-        alert("no relevant listings found");
+        let notFoundDiv = document.createElement("div")
+        notFoundDiv.classList.add("notFound");
+        
+        //not found line
+        let notFoundMsg = document.createElement("p");
+        notFoundMsg.id = "notFoundMsg";
+        notFoundMsg.innerHTML = `No search results found for <span>"` + searchVal + `"</span>.`;
+        notFoundDiv.appendChild(notFoundMsg);
+
+        //"did you mean...?" line
+        let didYouMeanMsg = document.createElement("p");
+        didYouMeanMsg.id = "didYouMeanMsg";
+        let thisInstead = levenshteinDistance("beefy", searchVal); 
+        didYouMeanMsg.innerHTML = `Did you mean: ` + thisInstead + `?`;
+        notFoundDiv.appendChild(didYouMeanMsg);
+
+        //"don't give up!" line
+        let dontGiveUpMsg = document.createElement("p");
+        dontGiveUpMsg.id = "dontGiveUpMsg";
+        dontGiveUpMsg.innerHTML = `Don't give up! Your new favourite meal is just another search away~`;
+        notFoundDiv.appendChild(dontGiveUpMsg);
+
+        searchListingsDiv.appendChild(notFoundDiv);
+
+        //remove filter for non-existent search result
+        filter.classList.toggle("hidden"); 
     }
 }
+
+//levenshtein distance for typos
+function levenshteinDistance (x,y) {
+    //edge case extremes for distance, if one string is empty then the length of the other is how many changes would need to be made
+    if(x.length == 0) return y.length;
+    if(y.length == 0) return x.length;
+    
+    const matrix = [];
+    
+    //initialise matrix
+    for(let i = 0; i <= x.length; i++) {
+        matrix[i] = [];
+        for(let j = 0; j <= y.length; j++) {
+            matrix[i][j] = 0;
+        }
+    }
+
+    //populate rest of matrix
+    for(let i = 1; i <= x.length; i++) {
+        for(let j = 1; j <= y.length; j++) {
+            matrix[i][j] = Math.min(
+                matrix[i - 1][j] + 1, //deletion
+                matrix[i][j - 1] + 1, //insertion
+                matrix[i - 1][j - 1] + (x[i - 1] === y[j - 1] ? 0 : 1) //substitution
+            );
+        }
+    }
+
+    return matrix[x.length][y.length];
+}
+
 
 
 //favourites functionality
