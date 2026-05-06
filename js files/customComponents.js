@@ -97,7 +97,7 @@ class FilterBlock extends HTMLElement {
                 <!--30 minutes or less-->
                 <div class="filterListing">
                     <input type="checkbox" id="30orLess">
-                    <label for="30orLess">30 minutes or less</label>
+                    <label for="30orLess">30 mins or less</label>
                 </div>
 
                 <!--one pot-->

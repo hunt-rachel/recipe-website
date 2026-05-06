@@ -372,10 +372,13 @@ var masterAutocompleteArr = [
     "Cuban Style Beef",
     "Lentil Dahl",
     "Marry Me Chicken Orzo",
-    "Sausage and Pepper Pasta Bake" 
+    "Sausage and Pepper Pasta Bake", 
 
     /**tags */
-
+    "30 mins or less",
+    "one pot",
+    "slow cooker",
+    "vegan"
 ];
 
 //function for displaying search results
@@ -385,10 +388,11 @@ function displaySearchResults(searchVal) {
 
     var foundResults = false;
 
-    currNavTitle.innerHTML = `<h1 id="navTitleText">Searching For: <i>${searchVal}</i></h1>`;
+    currNavTitle.innerHTML = `<h1 id="navTitleText">Searching For: <i>"${searchVal}"</i></h1>`;
 
     for(var r in recipesObj) {
         let titleToCheck = recipesObj[r].title.toUpperCase();
+        let tagsToCheck = recipesObj[r].tags;
 
         //found relevant search result
         if(titleToCheck.includes(searchVal.toUpperCase())) {
@@ -398,6 +402,21 @@ function displaySearchResults(searchVal) {
             listing.id = r;
 
             searchListingsDiv.appendChild(listing);
+        }
+
+        //add else if for checking tags - to lower as all tags in lower case for style
+        //need to cycle through tags arr instead of just using includes to check for substring
+        else {
+            for(var tag in tagsToCheck) {
+                if(tagsToCheck[tag].includes(searchVal.toLowerCase())) {
+                    foundResults = true;
+
+                    let listing = document.createElement("recipe-listing");
+                    listing.id = r;
+
+                    searchListingsDiv.appendChild(listing);
+                }
+            }
         }
     }
 
