@@ -444,7 +444,7 @@ function displaySearchResults(searchVal) {
             let sLink = document.createElement("li");
 
             let sText  = document.createElement("a");
-            sText.href="recipes-list.html"
+            sText.href="/recipes-search.html?search=" + suggestions[s];
             sText.innerHTML = `${suggestions[s]}`;
             sLink.appendChild(sText);
             suggestionsMsg.appendChild(sLink)
