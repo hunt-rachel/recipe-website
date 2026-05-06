@@ -94,32 +94,36 @@ class FilterBlock extends HTMLElement {
             <form id="filterForm" class="column">
                 <h2>filter by:</h2>
                 
+                <!--show all-->
+                <div class="filterListing">
+                    <input type="radio" name="recipeFilter" class="active" onclick="filterListings('all')">
+                    <label>show all</label>
+                </div>
+                
                 <!--30 minutes or less-->
                 <div class="filterListing">
-                    <input type="checkbox" id="30orLess">
-                    <label for="30orLess">30 mins or less</label>
+                    <input type="radio" name="recipeFilter" onclick="filterListings('30 mins or less')">
+                    <label>30 mins or less</label>
                 </div>
 
                 <!--one pot-->
                 <div class="filterListing">
-                    <input type="checkbox" id="onePot">
-                    <label for="30orLess">one pot</label>
+                    <input type="radio" name="recipeFilter" onclick="filterListings('one pot')">
+                    <label>one pot</label>
                 </div>
 
                 <!--slow cooker-->
                 <div class="filterListing">
-                    <input type="checkbox" id="slowCooker">
-                    <label for="30orLess">slow cooker</label>
+                    <input type="radio" name="recipeFilter" onclick="filterListings('slow cooker')">
+                    <label>slow cooker</label>
                 </div>
 
                 <!--vegan-->
                 <div class="filterListing">
-                    <input type="checkbox" id="slowCooker">
-                    <label for="30orLess">vegan</label>
+                    <input type="radio" name="recipeFilter" onclick="filterListings('vegan')">
+                    <label>vegan</label>
                 </div>
 
-                <!--submit btn-->
-                <input id="filterSubmitBtn" type="submit" value="go!">
             </form>
         `;
     }

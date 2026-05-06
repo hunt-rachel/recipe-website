@@ -459,7 +459,7 @@ function displaySearchResults(searchVal) {
         let dontGiveUpMsg = document.createElement("p");
         dontGiveUpMsg.id = "dontGiveUpMsg";
         dontGiveUpMsg.innerHTML = `Don't give up! Your new favourite meal is just another search away ~`;
-        notFoundDiv.appendChild(dontGiveUpMsg);
+        notFoundDiv.appendChild(dontGiveUpMsg); 
 
         searchListingsDiv.appendChild(notFoundDiv);
 
@@ -575,8 +575,6 @@ function removeFromFavourites(rID) {
             localStorage.setItem("favourites", JSON.stringify(storage));
             //alert("favourites now only includes" + storage); //debug alert
         }
-
-        
     }
 }
 

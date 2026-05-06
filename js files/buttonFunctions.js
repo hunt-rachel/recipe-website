@@ -158,3 +158,28 @@ function assignHearts(fArr) {
             }
         }
 }
+
+let selectedFilters = [];
+
+function filterListings(f) {
+    var listings = document.getElementsByClassName("recipeListing");
+
+    if(f == "all") {
+        for(var l in listings) {
+            if(listings[l].classList.includes("hidden")) {
+                listings[l].classList.remove("hidden");
+            }
+        }
+    }
+
+    else {
+        for(let i = 0; i < listings.length; i++) {
+            //clear if listing shown already
+            if(listings[i].classList.includes("hidden")) {listings[i].classList.remove("hidden");}
+
+            if(!recipesObj[listings[i].id].tags.includes(f)) {
+                listings[i].classList.add("hidden");
+            }
+        }
+    }
+}

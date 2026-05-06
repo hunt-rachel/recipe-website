@@ -431,9 +431,8 @@ body {
     margin-right: 10px;
 }
 
-#filterForm input[type=checkbox] {
+#filterForm input[type=radio] {
     width: max(1vw, 20px);
-    border-radius: 50px;
 
     accent-color: var(--headerBG);
 }
