@@ -93,7 +93,7 @@ body {
 
 /*navigation bar classes*/
 .navBar {
-    width: 100vw;
+    width: 100%;
     height: 5vw;
     
     padding: 5px 2vw;
@@ -454,6 +454,39 @@ body {
     padding-bottom: 5px;
 }
 
+.notFound {
+    gap: 20px;
+    padding: 20px 0px;
+
+    width: 100vw;
+
+    font-size: max(var(--listingName), 24px);
+}
+
+/*done here instead of using html tag incase I ever want to style the span in a different / more complicated way*/
+.notFound span {
+    font-style: italic;
+}
+
+.notFound a, a:visited {
+    color: black;
+}
+
+#didYouMeanMsg {
+    background-color: var(--filterBG);
+    width: fit-content;
+    margin: auto;
+    list-style: none;
+
+    border-radius: 15px;
+    border: 5px solid var(--headerBG);
+
+    padding: 20px;
+}
+
+#dontGiveUpMsg {
+    font-style: italic;
+}
 
 /*instruction page classes*/
 .instructionsBody {

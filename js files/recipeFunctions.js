@@ -424,38 +424,41 @@ function displaySearchResults(searchVal) {
     //no relevant listings found
     if(!foundResults) {
         let notFoundDiv = document.createElement("div")
-        notFoundDiv.classList.add("notFound");
+        notFoundDiv.classList.add("notFound", "column", "centerTxt");
         
         //not found line
         let notFoundMsg = document.createElement("p");
         notFoundMsg.id = "notFoundMsg";
-        notFoundMsg.innerHTML = `No search results found for <span>"` + searchVal + `"</span>.`;
+        notFoundMsg.innerHTML = `No search results found for "<span>` + searchVal + `</span>".`;
         notFoundDiv.appendChild(notFoundMsg);
 
-        //"did you mean...?" line
-        let suggestionsMsg = document.createElement("ul");
-        suggestionsMsg.id = "didYouMeanMsg";
-        suggestionsMsg.innerHTML = `Did you mean: `;
-        
+        //"did you mean...?" line  
         let suggestions = []; 
         suggestOtherSearches(suggestions);
 
-        for(var s in suggestions) {
-            let sLink = document.createElement("li");
+        //only add suggestions section if there is something to suggest
+        if(suggestions.length > 0) {
+            let suggestionsMsg = document.createElement("ul");
+            suggestionsMsg.id = "didYouMeanMsg";
+            suggestionsMsg.innerHTML = `<b>Did you mean:</b> `;
 
-            let sText  = document.createElement("a");
-            sText.href="/recipes-search.html?search=" + suggestions[s];
-            sText.innerHTML = `${suggestions[s]}`;
-            sLink.appendChild(sText);
-            suggestionsMsg.appendChild(sLink)
-        }
+            for(var s in suggestions) {
+                let sLink = document.createElement("li");
+
+                let sText  = document.createElement("a");
+                sText.href="/recipes-search.html?search=" + suggestions[s];
+                sText.innerHTML = `${suggestions[s]}`;
+                sLink.appendChild(sText);
+                suggestionsMsg.appendChild(sLink);
+            }
         
-        notFoundDiv.appendChild(suggestionsMsg);
+            notFoundDiv.appendChild(suggestionsMsg);
+        }
 
         //"don't give up!" line
         let dontGiveUpMsg = document.createElement("p");
         dontGiveUpMsg.id = "dontGiveUpMsg";
-        dontGiveUpMsg.innerHTML = `Don't give up! Your new favourite meal is just another search away~`;
+        dontGiveUpMsg.innerHTML = `Don't give up! Your new favourite meal is just another search away ~`;
         notFoundDiv.appendChild(dontGiveUpMsg);
 
         searchListingsDiv.appendChild(notFoundDiv);
