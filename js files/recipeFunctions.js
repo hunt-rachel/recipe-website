@@ -433,11 +433,24 @@ function displaySearchResults(searchVal) {
         notFoundDiv.appendChild(notFoundMsg);
 
         //"did you mean...?" line
-        let didYouMeanMsg = document.createElement("p");
-        didYouMeanMsg.id = "didYouMeanMsg";
-        let thisInstead = levenshteinDistance("beefy", searchVal); 
-        didYouMeanMsg.innerHTML = `Did you mean: ` + thisInstead + `?`;
-        notFoundDiv.appendChild(didYouMeanMsg);
+        let suggestionsMsg = document.createElement("ul");
+        suggestionsMsg.id = "didYouMeanMsg";
+        suggestionsMsg.innerHTML = `Did you mean: `;
+        
+        let suggestions = []; 
+        suggestOtherSearches(suggestions);
+
+        for(var s in suggestions) {
+            let sLink = document.createElement("li");
+
+            let sText  = document.createElement("a");
+            sText.href="recipes-list.html"
+            sText.innerHTML = `${suggestions[s]}`;
+            sLink.appendChild(sText);
+            suggestionsMsg.appendChild(sLink)
+        }
+        
+        notFoundDiv.appendChild(suggestionsMsg);
 
         //"don't give up!" line
         let dontGiveUpMsg = document.createElement("p");
@@ -482,7 +495,23 @@ function levenshteinDistance (x,y) {
     return matrix[x.length][y.length];
 }
 
+//use levenshtein distance to suggest other searches
+function suggestOtherSearches(sArr) {
+    for(var val in masterAutocompleteArr) {
+            let varWords = masterAutocompleteArr[val].split(' ');
+            let currScoreHolder = [];
+            
+            //checks score of each individual word in autocomplete listing, instead of listing as whole
+            for(var word in varWords) {
+                currScoreHolder.push(levenshteinDistance(varWords[word] .toUpperCase(), searchVal.toUpperCase()));
+            }
 
+            //if the autocomplete listing contains a word with a score of 1, close enough typo to suggest others, push value to screen
+            if(currScoreHolder.includes(1)) {
+                sArr.push(masterAutocompleteArr[val])
+            }
+        }
+}
 
 //favourites functionality
 function displayFavouritesListings(){
