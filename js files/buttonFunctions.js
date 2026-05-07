@@ -170,10 +170,12 @@ function assignHearts(fArr) {
 
 function assignFilterBtns(){
     const filters=document.querySelectorAll(".filterInput");
+    const labels = document.querySelectorAll(".filterLabel")
     const listings=document.querySelectorAll(".recipeListing");
 
     for(let i = 0; i < filters.length; i++) {
         filters[i].addEventListener("click", function(){filterListings(filters[i].value, listings)})
+        labels[i].addEventListener("click", function(){filters[i].click()})
     }
 
     //click "show all" on load, make it default

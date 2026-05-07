@@ -344,7 +344,7 @@ body {
 }
 
 .listingText a{
-    font-size: max(2vw, 20px);
+    font-size: max(2vw, 28px);
     color: black;
 }
 
@@ -486,6 +486,7 @@ body {
 
 #dontGiveUpMsg {
     font-style: italic;
+    padding: 0 2vw;
 }
 
 /*instruction page classes*/
@@ -615,7 +616,7 @@ body {
 
 /*width 600px or less queries*/
 @media only screen and (max-width: 600px) {
-    #instructionsNavBar #navTitleText{
+    #instructionsNavBar #navTitleText, #searchNavBar #navTitleText{
         display: none;
     }
 
@@ -631,10 +632,42 @@ body {
     }
 
     #recipeTags span, .recipeInfo span {
-        font-size: 20px;
+        font-size: max(var(--ingredientP), 16px);
     }
 
-    .instructionsText ol {
+    .instructionsText ol p{
         padding-top: 0;
+    }
+
+    .listingsBody {
+        flex-direction: column-reverse;
+    }
+
+    #filterForm {
+        align-items: start;
+        width: fit-content;
+        margin-left: 1vw;
+        margin-right: 1vw;
+    }
+    
+    #filterForm h2{
+        font-size: max(2vw, 24px);
+        margin: 5px auto;
+    }
+
+    #filterForm input {
+        font-size: max(1.5vw, 20px);
+    }
+
+    .filterListing {
+        flex-direction: row;
+        gap: 5px;
+    }
+
+    .allFilterListings {
+        display: flex;
+        flex-direction: row;
+        text-align: left;
+        align-items: center;
     }
 }

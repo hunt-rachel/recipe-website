@@ -95,35 +95,37 @@ class FilterBlock extends HTMLElement {
                 <h2>filter by:</h2>
                 
                 <!--show all-->
-                <div class="filterListing">
-                    <input type="radio" name="recipeFilter" value="show all" class="filterInput">
-                    <label>show all</label>
-                </div>
-                
-                <!--30 minutes or less-->
-                <div class="filterListing">
-                    <input type="radio" name="recipeFilter" value="30 mins or less" class="filterInput">
-                    <label>30 mins or less</label>
-                </div>
+                <div class="allFilterListings">
+                    <div class="filterListing">
+                        <input type="radio" name="recipeFilter" value="show all" class="filterInput">
+                        <label class="filterLabel">show all</label>
+                    </div>
+                    
+                    <!--30 minutes or less-->
+                    <div class="filterListing">
+                        <input type="radio" name="recipeFilter" value="30 mins or less" class="filterInput">
+                        <label class="filterLabel">30 mins or less</label>
+                    </div>
 
-                <!--one pot-->
-                <div class="filterListing">
-                    <input type="radio" name="recipeFilter" value="one pot" class="filterInput">
-                    <label>one pot</label>
-                </div>
+                    <!--one pot-->
+                    <div class="filterListing">
+                        <input type="radio" name="recipeFilter" value="one pot" class="filterInput">
+                        <label class="filterLabel">one pot</label>
+                    </div>
 
-                <!--slow cooker-->
-                <div class="filterListing">
-                    <input type="radio" name="recipeFilter" value="slow cooker" class="filterInput">
-                    <label>slow cooker</label>
-                </div>
+                    <div class="break"></div>
+                    <!--slow cooker-->
+                    <div class="filterListing">
+                        <input type="radio" name="recipeFilter" value="slow cooker" class="filterInput">
+                        <label class="filterLabel">slow cooker</label>
+                    </div>
 
-                <!--vegan-->
-                <div class="filterListing">
-                    <input type="radio" name="recipeFilter" value="vegan" class="filterInput">
-                    <label>vegan</label>
+                    <!--vegan-->
+                    <div class="filterListing">
+                        <input type="radio" name="recipeFilter" value="vegan" class="filterInput">
+                        <label class="filterLabel">vegan</label>
+                    </div>
                 </div>
-
             </form>
         `;
     }
