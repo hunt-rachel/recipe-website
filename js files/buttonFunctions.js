@@ -153,7 +153,7 @@ function assignHearts(fArr) {
             hearts[i].addEventListener("click", toggleFavourite);
 
             //check if recipe listing id found in local storage favourites
-            if(fArr.length > 0 && fArr.includes(hearts[i].parentNode.parentNode.id)) {
+            if(fArr.length > 0 && fArr.includes(hearts[i].id)) {
                 hearts[i].classList.add("favourite");
             }
         }

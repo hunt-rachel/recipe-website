@@ -36,7 +36,7 @@
                     <div class="recipeTitle row centerVertical">
                         <h1 id="rTitle">RECIPE NAME</h1>
                         <div class="line"></div>
-                        <div class="dot"></div>
+                        <button class="heart" id="">&#9829;</button>
                     </div>
                     
                     <div id="recipeTags" class="tags row"></div>
@@ -63,6 +63,14 @@
     const urlParams = new URLSearchParams(window.location.search)
     const currID = urlParams.get('id');
     displayRecipeInstructions(currID);
+
+    document.querySelector(".heart").id = currID;
+
+    if(localStorage.getItem('favourites')) { 
+        var favouritesArr = JSON.parse(localStorage['favourites']);
+    }
+
+    assignHearts(favouritesArr);
 
     autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
 

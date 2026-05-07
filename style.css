@@ -85,7 +85,7 @@
 
 body {
     background-color: var(--bodyBG);
-    min-width: 800px;
+    min-width: 360px;
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
