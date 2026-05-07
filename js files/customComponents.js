@@ -48,7 +48,7 @@ class HomeLink extends HTMLElement{
         const linkText = this.getAttribute("linkText");
         
         this.innerHTML = `
-            <div class="homeLinkSection centerTxt"><a href="${url}">
+            <div class="homeLinkSection centerTxt"><a class="homeLinkURL" href="${url}">
                 <h1 class=${iconColour}>${linkIcon}</h1>
                 <p>${linkText}</p>
             </a></div>`;

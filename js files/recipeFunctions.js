@@ -362,7 +362,7 @@ const recipesObj = {
     }
 }
 
-//**autocomplete array */
+//**autocomplete array */ 
 var masterAutocompleteArr = [
     /**recipes */
     "Beef Katsu Curry Noodles",

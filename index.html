@@ -32,6 +32,7 @@
         <div class="homeLinks row">
             <home-link 
                 url="recipes-list.html"
+                id="allRecipesLink"
                 linkIcon="&#128366;"
                 iconColour="teal"
                 linkText="all recipes"
@@ -39,6 +40,7 @@
 
             <home-link 
                 url="favourites.html"
+                id="favouritesLink"
                 linkIcon="&#9829;"
                 iconColour="red"
                 linkText="favourites"
@@ -46,6 +48,7 @@
 
             <home-link 
                 url="recipe-instructions.html"
+                id="surpriseLink"
                 linkIcon="?"
                 iconColour="purple"
                 linkText="surprise me!"
@@ -75,6 +78,17 @@
             
             autocomplete(searchInput, masterAutocompleteArr);
             searchBtn.addEventListener("click", function(){assignSearchValue(searchInput)});
+
+            const surpriseBtn = document.getElementById("surpriseLink");
+            const surpriseURL = surpriseBtn.querySelector(".homeLinkURL")
+
+            //function written here to ensure different random index picked on each click
+            surpriseBtn.addEventListener("click", function(){
+                var recipes = Object.keys(recipesObj);
+                let rand = Math.floor(Math.random() * recipes.length);
+                
+                surpriseURL.href += ("?id=" + recipes[rand])
+            })
         </script>
 
     </body>
