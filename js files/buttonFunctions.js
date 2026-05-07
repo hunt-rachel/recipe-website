@@ -1,5 +1,14 @@
 function openOverlay() {
-    document.getElementById("overlayNav").style.width = "25%";
+    //for mobile devices
+    if(window.innerWidth <= 600) {
+        document.getElementById("overlayNav").style.width = "100%";
+        document.getElementById("overlayLinks").style.fontSize = "max(6vw, 42px)";
+    }
+    
+    else {
+        document.getElementById("overlayNav").style.width = "25%";
+        document.getElementById("overlayLinks").style.fontSize = "max(3vw, 32px)";
+    }
 }
 
 function closeOverlay() {

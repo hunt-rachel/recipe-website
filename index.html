@@ -24,7 +24,7 @@
         <!--home contents-->
         <div class="homeWelcome centerTxt">
             <h1 id="startPhrase">awesome start phrase!</h1>
-            <h2>Welcome to a collection of all of my favourite recipes. 
+            <h2>Welcome to a collection of all of my favourite recipes.<br> 
                 <br>Here, you can find food that's quick <i>and</i> easy to cook, while still being tasty!
             </h2>
         </div>
@@ -80,7 +80,7 @@
             searchBtn.addEventListener("click", function(){assignSearchValue(searchInput)});
 
             const surpriseBtn = document.getElementById("surpriseLink");
-            const surpriseURL = surpriseBtn.querySelector(".homeLinkURL")
+            const surpriseURL = surpriseBtn.querySelector(".homeLinkURL");
 
             //function written here to ensure different random index picked on each click
             surpriseBtn.addEventListener("click", function(){

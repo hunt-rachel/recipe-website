@@ -44,8 +44,6 @@
     --homeH2: 2vw;
     --homeP: 2.5vw;
 
-    --overlayA: 3vw;
-
     --listingName: 2vw;
     --listingTag: 1.5vw;
 
@@ -93,8 +91,10 @@ body {
 
 /*navigation bar classes*/
 .navBar {
-    width: 100%;
-    height: 5vw;
+    width: 100vw;
+    display: flex;
+    flex: 1;
+    height: max(5vw, 50px);
     
     padding: 5px 2vw;
 
@@ -106,14 +106,14 @@ body {
 .navBar h1{
     color: white;
 
-    font-size: max(2vw, 20px);
+    font-size: max(2vw, 24px);
 }
 
 #navTitleText {
     text-decoration: underline;
 }
 
-.overlay {
+.overlay { 
     height: 100%;
     width: 0;
     position: fixed;
@@ -135,7 +135,6 @@ body {
 #overlayLinks a, #overlayLinks a:visited {
     padding: 8px;
     text-decoration: none;
-    font-size: max(var(--overlayA), 20px);
     color: var(--overlayTxt);
     display: block;
     transition: 0.2s;
@@ -148,9 +147,9 @@ body {
 
 .closeOverlayBtn {
     position: absolute;
-    top: 10px;
-    left: 20px;
-    font-size: 4vw;
+    left: 2vw;
+    top: 0.5vw;
+    font-size: max(4vw, 48px);
     color: var(--overlayTxt);
 
     text-decoration: none;
@@ -169,7 +168,7 @@ body {
     margin-right: 20px;
 
     color: white;
-    font-size: 2vw;
+    font-size: max(2vw, 24px);
 }
 
 #prevBtn{
@@ -184,11 +183,8 @@ body {
 }
 
 /*search bar classes*/
-.navBar .searchbarContainer{
-    margin-left: auto;
-}
-
 .searchbarContainer {
+    margin-left: auto;
     display: inline-block;
     background-color: white;
 
@@ -197,9 +193,10 @@ body {
 
 .searchbarContainer input[type=search] {
     width: 25vw;
-    min-width: 200px;
+    min-width: 125px;
 
     height: 3vw;
+    min-height: 30px;
 
     border: 0;
 
@@ -224,7 +221,7 @@ body {
 
     border: 0;
 
-    font-size: 2vw;
+    font-size: max(2vw, 24px);
 
     color: grey;
     margin-right: 1vw;
@@ -275,18 +272,19 @@ body {
 /*home classes*/
 .homeWelcome{
     user-select: none;
+    padding: 0 20px;
 }
 
 .homeWelcome h1{
     margin-top: 10vh;
     margin-bottom: 2.5vh;
 
-    font-size: max(var(--homeH1), 48px);
+    font-size: max(var(--homeH1), 36px);
 
 }
 
 .homeWelcome h2{
-    font-size: max(var(--homeH2), 24px); 
+    font-size: max(var(--homeH2), 18px); 
     font-weight: var(--lightHeader);
 
     margin-bottom: 5vw;
@@ -296,8 +294,6 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: baseline;
-
-    
 }
 
 .homeLinkSection {
@@ -327,7 +323,6 @@ body {
 
 .homeLinks h1 {
     font-size: max(7vw, 60px);
-
 }
 
 .homeLinks p {
@@ -344,12 +339,12 @@ body {
 }
 
 .listingText{
-    margin-left: 30px;
+    margin-left: 20px;
     gap: 10px
 }
 
 .listingText a{
-    font-size: max(var(--listingName), 24px);
+    font-size: max(2vw, 20px);
     color: black;
 }
 
@@ -395,7 +390,8 @@ body {
     padding: var(--tagPadding);
     margin-right: 10px;
 
-    font-size: max(1.25vw, 18px);
+    font-size: max(var(--listingTag), 16px);
+    white-space: nowrap;
 }
 
 .hidden {
@@ -411,13 +407,15 @@ body {
 
     background-color: var(--filterBG);
     border-radius: 15px;
-    border: 5px solid var(--headerBG);
+    border: 3px solid var(--headerBG);
 
-    padding: 20px;
+    padding: 1vw;
+
+    min-width: 140px;
 }
 
 #filterForm h2{
-    font-size: max(2.25vw, 24px); 
+    font-size: max(2.25vw, 20px); 
     font-weight: 200;
     letter-spacing: 0.5px;
     text-decoration: underline;
@@ -430,12 +428,12 @@ body {
 }
 
 .filterListing label {
-    font-size: max(var(--listingName), 20px);
+    font-size: max(var(--listingName), 16px);
     margin-right: 10px;
 }
 
 #filterForm input[type=radio] {
-    width: max(1vw, 20px);
+    width: max(1vw, 12px);
 
     accent-color: var(--headerBG);
 }
@@ -496,7 +494,7 @@ body {
 }
 
 .ingredients {
-    width: 25vw;
+    width: fit-content;
     
     background-color: var(--ingredientsBG);
     color: white;
@@ -509,11 +507,13 @@ body {
 
     padding-top: 2vh;
     padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .ingredients li {
     font-size: max(var(--ingredientP), 16px);
-    margin-left: 3vw;
+    margin-left: max(3vw, 30px);
 
     padding: 5px 0px;
     padding-right: 3vw;
@@ -531,9 +531,11 @@ body {
 .recipeTitle {
     font-style: italic;
     justify-content: space-between;
-    font-size: max(0.75vw, 10px);
-
     padding-bottom: 10px;
+}
+
+.recipeTitle h1 {
+    font-size: max(3vw, 36px);
 }
 
 .line {
@@ -562,7 +564,7 @@ body {
     border-radius: 15px;
     padding: 3px 10px 4px;
 
-    font-size: max(var(--listingTag), 18px);
+    font-size: max(var(--listingTag), 16px);
     margin-right: 10px;
 }
 
@@ -609,4 +611,30 @@ body {
 
 
     padding: 10px 20px;
+}
+
+/*width 600px or less queries*/
+@media only screen and (max-width: 600px) {
+    #instructionsNavBar #navTitleText{
+        display: none;
+    }
+
+    .recipeTitle h1 {
+        font-size: 32px;
+    }
+
+    #recipeTags, .recipeInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        align-items: left;
+    }
+
+    #recipeTags span, .recipeInfo span {
+        font-size: 20px;
+    }
+
+    .instructionsText ol {
+        padding-top: 0;
+    }
 }
