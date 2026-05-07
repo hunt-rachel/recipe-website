@@ -338,6 +338,9 @@ body {
 /*recipe listing classes*/
 .recipeListing {
     margin: 10px 10px 25px 2vw;
+    
+    /*none as default so show can work for filtering*/
+    display: none; 
 }
 
 .listingText{

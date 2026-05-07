@@ -96,31 +96,31 @@ class FilterBlock extends HTMLElement {
                 
                 <!--show all-->
                 <div class="filterListing">
-                    <input type="radio" name="recipeFilter" class="active" onclick="filterListings('all')">
+                    <input type="radio" name="recipeFilter" value="show all" class="filterInput">
                     <label>show all</label>
                 </div>
                 
                 <!--30 minutes or less-->
                 <div class="filterListing">
-                    <input type="radio" name="recipeFilter" onclick="filterListings('30 mins or less')">
+                    <input type="radio" name="recipeFilter" value="30 mins or less" class="filterInput">
                     <label>30 mins or less</label>
                 </div>
 
                 <!--one pot-->
                 <div class="filterListing">
-                    <input type="radio" name="recipeFilter" onclick="filterListings('one pot')">
+                    <input type="radio" name="recipeFilter" value="one pot" class="filterInput">
                     <label>one pot</label>
                 </div>
 
                 <!--slow cooker-->
                 <div class="filterListing">
-                    <input type="radio" name="recipeFilter" onclick="filterListings('slow cooker')">
+                    <input type="radio" name="recipeFilter" value="slow cooker" class="filterInput">
                     <label>slow cooker</label>
                 </div>
 
                 <!--vegan-->
                 <div class="filterListing">
-                    <input type="radio" name="recipeFilter" onclick="filterListings('vegan')">
+                    <input type="radio" name="recipeFilter" value="vegan" class="filterInput">
                     <label>vegan</label>
                 </div>
 

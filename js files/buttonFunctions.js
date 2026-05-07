@@ -159,27 +159,31 @@ function assignHearts(fArr) {
         }
 }
 
-let selectedFilters = [];
+function assignFilterBtns(){
+    const filters=document.querySelectorAll(".filterInput");
+    const listings=document.querySelectorAll(".recipeListing");
 
-function filterListings(f) {
-    var listings = document.getElementsByClassName("recipeListing");
-
-    if(f == "all") {
-        for(var l in listings) {
-            if(listings[l].classList.includes("hidden")) {
-                listings[l].classList.remove("hidden");
-            }
-        }
+    for(let i = 0; i < filters.length; i++) {
+        filters[i].addEventListener("click", function(){filterListings(filters[i].value, listings)})
     }
 
-    else {
-        for(let i = 0; i < listings.length; i++) {
-            //clear if listing shown already
-            if(listings[i].classList.includes("hidden")) {listings[i].classList.remove("hidden");}
+    //click "show all" on load, make it default
+    filters[0].click();
+}
 
-            if(!recipesObj[listings[i].id].tags.includes(f)) {
-                listings[i].classList.add("hidden");
-            }
+function filterListings(f, l) {
+    for(let i = 0; i < l.length; i++) {
+        //show all listings
+        if(f === "show all") {l[i].style.display="flex";}
+
+        else {
+            //clear the slate
+            l[i].style.display="none";
+
+            let currID = l[i].parentNode.id;
+
+            //display listings with relevant tags
+            if(recipesObj[currID].tags.includes(f)) {l[i].style.display="flex";}
         }
     }
 }
