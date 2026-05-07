@@ -38,6 +38,10 @@
             var favouritesArr = JSON.parse(localStorage['favourites']);
         }
 
+        else {
+            var favouritesArr = []
+        }
+
         displaySearchResults(searchVal);
 
         assignHearts(favouritesArr);

@@ -179,7 +179,7 @@ function assignFilterBtns(){
     }
 
     //click "show all" on load, make it default
-    filters[0].click();
+    window.onload = filters[0].click();
 }
 
 function filterListings(f, l) {

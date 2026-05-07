@@ -45,6 +45,10 @@
             var favouritesArr = JSON.parse(localStorage['favourites']);
         }
 
+        else {
+            var favouritesArr = []
+        }
+
         assignHearts(favouritesArr);
 
         const searchInput = document.getElementById("searchInput");
