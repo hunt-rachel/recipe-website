@@ -645,7 +645,9 @@ body {
 
     #filterForm {
         align-items: start;
-        margin-left: 1vw;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     #filterForm h2{
