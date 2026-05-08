@@ -31,7 +31,7 @@
     </body>
 
     <script>
-        displayFavouritesListings();
+        window.onload = displayFavouritesListings();
 
         if(localStorage.getItem('favourites')) { 
             var favouritesArr = JSON.parse(localStorage['favourites']);
@@ -41,13 +41,13 @@
             var favouritesArr = []
         }
     
-        assignHearts(favouritesArr);
+        window.onload = assignHearts(favouritesArr);
 
-        autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
+        window.onload = autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
     
         searchBtn.addEventListener("click", function(){assignSearchValue(searchInput)});
 
-        assignFilterBtns();
+        window.onload = assignFilterBtns();
     </script>
 
 </html>

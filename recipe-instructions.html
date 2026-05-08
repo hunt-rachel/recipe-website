@@ -63,7 +63,7 @@
 <script>
     const urlParams = new URLSearchParams(window.location.search)
     const currID = urlParams.get('id');
-    displayRecipeInstructions(currID);
+    window.onload = displayRecipeInstructions(currID);
 
     document.querySelector(".heart").id = currID;
 
@@ -71,9 +71,9 @@
         var favouritesArr = JSON.parse(localStorage['favourites']);
     }
 
-    assignHearts(favouritesArr);
+    window.onload = assignHearts(favouritesArr);
 
-    autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
+    window.onload = autocomplete(document.getElementById("searchInput"), masterAutocompleteArr);
 
     searchBtn.addEventListener("click", function(){assignSearchValue(searchInput)});
 </script>

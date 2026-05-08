@@ -76,14 +76,20 @@
             const searchInput = document.getElementById("searchInput");
             const searchBtn = document.getElementById("searchBtn");
             
-            autocomplete(searchInput, masterAutocompleteArr);
+            window.onload = autocomplete(searchInput, masterAutocompleteArr);
             searchBtn.addEventListener("click", function(){assignSearchValue(searchInput)});
 
             const surpriseBtn = document.getElementById("surpriseLink");
             const surpriseURL = surpriseBtn.querySelector(".homeLinkURL");
 
             var recipes = Object.keys(recipesObj);
-            let rand = Math.floor(Math.random() * recipes.length);
+            let rand = 0;
+            
+            function setRandRecipe() {
+                rand = Math.floor(Math.random() * recipes.length);
+            }
+
+            window.onload = setRandRecipe();
             
             //function written here to ensure different random index picked on each click
             surpriseBtn.addEventListener("click", function(){

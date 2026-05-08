@@ -49,15 +49,15 @@
             var favouritesArr = []
         }
 
-        assignHearts(favouritesArr);
+        window.onload = assignHearts(favouritesArr);
 
         const searchInput = document.getElementById("searchInput");
         const searchBtn = document.getElementById("searchBtn");
         
-        autocomplete(searchInput, masterAutocompleteArr);
+        window.onload = autocomplete(searchInput, masterAutocompleteArr);
 
         searchBtn.addEventListener("click", function(){assignSearchValue(searchInput)});
 
-        assignFilterBtns();
+        window.onload = assignFilterBtns();
     </script>
 </html>
