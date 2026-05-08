@@ -89,8 +89,9 @@
                 rand = Math.floor(Math.random() * recipes.length);
             }
 
+            //all bases covered for load vs history.back
             window.onload = setRandRecipe();
-            window.onpopstate = setRandRecipe();
+            window.onpageshow = setRandRecipe();
             
             //function written here to ensure different random index picked on each click
             surpriseBtn.addEventListener("click", function(){
