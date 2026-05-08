@@ -566,7 +566,7 @@ function removeFromFavourites(rID) {
     //checks favoruites exists in local storage (it should do at this point)
     if(localStorage.getItem('favourites')) {
         //get localStorage string as array
-        let storage = JSON.parse(localStorage['favourites']);
+        let storage = JSON.parse(localStorage['favourites']); 
         let removalIndex = storage.indexOf(rID);
 
         //only splice array if rID found

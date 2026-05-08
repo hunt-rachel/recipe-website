@@ -73,19 +73,19 @@ function autocomplete(inp, arr) {
         if(x) x = x.getElementsByTagName("div");
 
         /**if down arrow pressed, increase currFocus var and make curr item more visible */
-        if(e.keyCode == 40) {
+        if(e.key === 'ArrowDown') {
             currFocus++;
             addActive(x);
         }
 
         /**else if up arrow pressed, decrease curr focus variable and make current item more visible */
-        else if(e.keyCode == 38) {
+        else if(e.key === 'ArrowUp') { 
             currFocus--;
             addActive(x);
         }
 
         /**if enter key pressed and focus highlighted, enter that. else, enter form */
-        else if(e.keyCode==13){
+        else if(e.key === 'Enter'){
             e.preventDefault();
             if(currFocus > -1) {
                 /**simulate 'click' on active item */
