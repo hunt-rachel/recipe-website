@@ -82,11 +82,11 @@
             const surpriseBtn = document.getElementById("surpriseLink");
             const surpriseURL = surpriseBtn.querySelector(".homeLinkURL");
 
+            var recipes = Object.keys(recipesObj);
+            let rand = Math.floor(Math.random() * recipes.length);
+            
             //function written here to ensure different random index picked on each click
             surpriseBtn.addEventListener("click", function(){
-                var recipes = Object.keys(recipesObj);
-                let rand = Math.floor(Math.random() * recipes.length);
-                
                 surpriseURL.href += ("?id=" + recipes[rand])
             })
         </script>
