@@ -9,7 +9,7 @@ class NavigationBar extends HTMLElement {
         this.innerHTML = `
             <div class="navBar row centerVertical" id="nav">
                 <span class=navIcon onclick="openOverlay()">&#9776</span>
-                <h1 class="${btnState}" id="prevBtn" onclick="history.back()">&#8617;</h1>
+                <h1 class="${btnState}" id="prevBtn" onclick="refreshOnBack()">&#8617;</h1>
                 <h1 id="navTitleText">${navText}</h1>
                 <div class="searchbarContainer centerVertical">
                     <form id="searchForm" autocomplete="off">

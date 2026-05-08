@@ -198,3 +198,7 @@ function filterListings(f, l) {
         }
     }
 }
+
+function refreshOnBack() {
+    window.location = document.referrer;
+}
