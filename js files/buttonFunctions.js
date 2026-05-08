@@ -159,7 +159,7 @@ function assignSearchValue(inp) {
 function assignHearts(fArr) {
     const hearts = document.querySelectorAll(".heart");
         for(let i = 0; i < hearts.length; i++) {
-            hearts[i].addEventListener("click", toggleFavourite);
+            hearts[i].addEventListener("pointerdown", toggleFavourite);
 
             //check if recipe listing id found in local storage favourites
             if(fArr.length > 0 && fArr.includes(hearts[i].id)) {
