@@ -23,7 +23,7 @@
 
         <!--home contents-->
         <div class="homeWelcome centerTxt">
-            <h1 id="startPhrase">awesome start phrase!</h1>
+            <h1 id="startPhrase">Let's get cooking!</h1>
             <h2>Welcome to a collection of all of my favourite recipes.<br> 
                 <br>Here, you can find food that's quick <i>and</i> easy to cook, while still being tasty!
             </h2>
@@ -71,7 +71,7 @@
             }
 
             //ensures different phrase displayed even if back button pressed
-            window.onload = setStartPhrase;
+            window.onload = setStartPhrase();
             
             const searchInput = document.getElementById("searchInput");
             const searchBtn = document.getElementById("searchBtn");
@@ -90,6 +90,7 @@
             }
 
             window.onload = setRandRecipe();
+            window.onpopstate = setRandRecipe();
             
             //function written here to ensure different random index picked on each click
             surpriseBtn.addEventListener("click", function(){
